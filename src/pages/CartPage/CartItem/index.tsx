@@ -14,15 +14,15 @@ import {
 } from './styles'
 
 import { AiOutlineClose } from 'react-icons/ai'
-import { CartItems } from '../../../App';
+import { ItemAtCart } from '../../../App';
 
-type CartItemProps = {
-  item: CartItems;
-  addToCart: (item: CartItems) => void;
+type Props = {
+  item: ItemAtCart;
+  addToCart: (clickedItem: ItemAtCart) => void;
   removeFromCart: (id: number) => void;
 }
 
-const CartItem = () => {
+const CartItem: React.FC<Props> = ({item, addToCart, removeFromCart}) => {
   const [amount, setAmount] = useState(1)
 
   const handleMinus = () => {
@@ -40,7 +40,7 @@ const CartItem = () => {
          <Item>
            <CartItemImage/>
             <CartItemName>
-              Nome do produto
+              {item.name}
            </CartItemName>
            <CartItemAmount>
             <MinusButton
@@ -52,6 +52,7 @@ const CartItem = () => {
             >+</PlusButton>
            </CartItemAmount>
            <CartItemPrice>
+              R${item.price}
            </CartItemPrice>
            <CloseCart>
                 <AiOutlineClose

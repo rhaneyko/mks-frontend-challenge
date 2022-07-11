@@ -12,7 +12,14 @@ import CartPage from '../../pages/CartPage';
 
 import CartIcon from '../../assets/Vector.png'
 
-const Navbar: React.FC = () => {
+import { ItemAtCart } from '../../App';
+type Props = {
+  cartItems: ItemAtCart[];
+  addToCart: (clickedItem: ItemAtCart) => void;
+  removeFromCart: (id: number) => void;
+}
+
+const Navbar: React.FC<Props> = ({cartItems, addToCart, removeFromCart}) => {
   const [ active, setActive ] = useState('nav_menu');
   const [icon, setIcon] = useState('nav_toggler');
   const navToggle = () => {
@@ -37,7 +44,7 @@ const Navbar: React.FC = () => {
               <AmountItemCart>1</AmountItemCart>
             </CartContainer>
             <CartBar className={active} > 
-              <CartPage/>
+              <CartPage cartItems={cartItems} addToCart={addToCart} removeFromCart={removeFromCart} />
             </CartBar>
         </Container>
     )

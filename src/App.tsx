@@ -9,22 +9,29 @@ import Skeleton from './components/Skeleton';
 import GlobalStyles from './styles/GlobalStyles';
 import theme from './styles/theme';
 
-export type CartItems = {
+export type ItemAtCart = {
   id: number;
   photo: string;
   name: string;
   price: number;
+  amount: number;
   quantity: number;
 }
 
+type Props = {
+  cartItem: ItemAtCart[];
+  addToCart: (clickedItem: ItemAtCart) => void;
+  removeFromCart: (id: number) => void;
+}
 
-function App() {
+
+const App: React.FC<Props> = ({cartItem, addToCart, removeFromCart}) => {
   const [isLoading, setIsLoading] = useState(true);
   const width = useRef(window.innerWidth / 4).current;
 
-  const [ cartItems, setCartItems ] = useState([] as CartItems[]);
+  const [ cartItems, setCartItems ] = useState([] as ItemAtCart[]);
 
-  const handleAddToCart = (clickedItem: CartItems) => {
+  const handleAddToCart = (clickedItem: ItemAtCart) => {
     setCartItems(prev => {
       const isItemInCart = prev.find(item => item.id === clickedItem.id);
 
@@ -66,7 +73,11 @@ function App() {
   return (
 
     <ThemeProvider theme={theme}>
-      <Header/>
+      <Header
+        cartItem={cartItem}
+        addToCart={handleAddToCart}
+        removeFromCart={removeFromCart}
+      />
       <HomePage />
       <GlobalStyles/>
     </ThemeProvider>

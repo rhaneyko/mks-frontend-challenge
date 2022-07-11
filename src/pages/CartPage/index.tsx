@@ -12,13 +12,22 @@ import {
 } from './styles'
 
 import { AiOutlineClose } from 'react-icons/ai'
+import { ItemAtCart } from '../../App';
 
+type Props = {
+  cartItems: ItemAtCart[];
+  addToCart: (clickedItem: ItemAtCart) => void;
+  removeFromCart: (id: number) => void;
+}
 
-const CartPage: React.FC = () => {
+const CartPage: React.FC<Props> = ({cartItems, addToCart, removeFromCart}) => {
   const [ active, setActive ] = useState('nav_menu');
   const closeCartBar = () => {
     setActive('nav_menu')
   }
+
+  const caculateTotalAmount = (cartItems: ItemAtCart[]) => 
+    cartItems.reduce((ack: number, item) => ack + item.price * item.amount, 0)
     return (
         <Container>
           <HeaderCartBar>
@@ -32,12 +41,14 @@ const CartPage: React.FC = () => {
               </ButtonCloseCartBar> 
               </HeaderCartBar>
               <ItemsCart>
-                <CartItem/>
+                {cartItems.length === 0 ? <p>Nenhum item no carrinho</p> : null}
+                {cartItems.map(item => (
+                  <CartItem key={item.id} item={item} addToCart={addToCart} removeFromCart={removeFromCart} />
+                ))}
               </ItemsCart>
-
               <TotalAmount>
                 <p>Total</p>
-                <p>R$ 0,00</p>
+                <p>R${caculateTotalAmount(cartItems).toFixed(2)}</p>
               </TotalAmount>
               <FinalizePurchase>
                 <p>Finalizar compra</p>
