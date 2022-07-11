@@ -52,7 +52,6 @@ const CartItem = () => {
             >+</PlusButton>
            </CartItemAmount>
            <CartItemPrice>
-             <h2>R$ 0,00</h2>
            </CartItemPrice>
            <CloseCart>
                 <AiOutlineClose
