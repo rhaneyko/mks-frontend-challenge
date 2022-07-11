@@ -1,0 +1,102 @@
+import styled from 'styled-components'
+
+export const Container = styled.div`
+   display: grid;
+   grid: 300px / auto auto auto auto;
+   grid-gap: 23px;
+`;
+
+export const ProductCard = styled.div`
+    display: flex;
+    flex-direction: column;
+
+    
+    align-items: center;
+    justify-content: space-between;
+
+    width: 220px;
+    height: 300px;
+
+    border-radius: 8px;
+
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.14);
+
+    background-color: ${props => props.theme.colors.cardBackground};
+`;
+
+export const ProductImage = styled.img`
+    width: 150px;
+    height: 140px;
+
+    margin: 5px 0 10px 0;
+
+    background-color: red;
+`;
+
+export const ProductInfos = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    width: 100%;
+
+    padding: 10px;
+`;
+
+export const ProductTitle = styled.p`
+    font-size: 16px;
+    font-weight: 400;
+
+    color: ${props => props.theme.colors.text};
+`;
+
+export const ProductPrice = styled.p`
+    font-size: 15px;
+    font-weight: 700;
+
+    border-radius: 5px;
+
+    color: #fff;
+    background-color: #373737;
+`;
+
+export const ProductDescription = styled.p`
+    font-size: 10px;
+    font-weight: 300;
+    font-family: 'Montserrat', sans-serif;
+
+    color: ${props => props.theme.colors.text};
+
+    padding: 5px;
+
+`;
+
+export const BuyButton = styled.button`
+    display: flex;
+
+    align-items: center;
+    justify-content: center; 
+
+    width: 100%;
+    height: 32px;
+
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #FFF;
+
+    background-color: ${props => props.theme.colors.buttonBackground};
+    
+    border: none;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+`;
+
+export const BuyButtonText = styled.p`
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+
+    color: #FFF;
+    
+    margin: 1px 0 0 14px;
+`;
