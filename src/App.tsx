@@ -9,7 +9,7 @@ import Skeleton from './components/Skeleton';
 import GlobalStyles from './styles/GlobalStyles';
 import theme from './styles/theme';
 
-export type CartItem = {
+export type CartItems = {
   id: number;
   photo: string;
   name: string;
@@ -22,9 +22,9 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const width = useRef(window.innerWidth / 4).current;
 
-  const [ cartItems, setCartItems ] = useState([] as CartItem[]);
+  const [ cartItems, setCartItems ] = useState([] as CartItems[]);
 
-  const handleAddToCart = (clickedItem: CartItem) => {
+  const handleAddToCart = (clickedItem: CartItems) => {
     setCartItems(prev => {
       const isItemInCart = prev.find(item => item.id === clickedItem.id);
 

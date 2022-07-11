@@ -14,11 +14,11 @@ import {
 } from './styles'
 
 import { AiOutlineClose } from 'react-icons/ai'
-import { CartItem } from '../../../App';
+import { CartItems } from '../../../App';
 
 type CartItemProps = {
-  item: CartItem;
-  addToCart: (item: CartItem) => void;
+  item: CartItems;
+  addToCart: (item: CartItems) => void;
   removeFromCart: (id: number) => void;
 }
 
