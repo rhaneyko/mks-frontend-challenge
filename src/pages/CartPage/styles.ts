@@ -79,6 +79,7 @@ export const TotalAmount = styled.div`
         font-size: 28px;
         font-weight: 700;
         font-family: 'Montserrat', sans-serif;
+        
         color: #FFF;
     }
 `;

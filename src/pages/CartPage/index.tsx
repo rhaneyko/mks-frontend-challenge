@@ -60,5 +60,4 @@ const CartPage: React.FC<Props> = ({cartItems, addToCart, removeFromCart}) => {
         </Container>
     )
     }
-
-    export default CartPage;
+export default CartPage;
