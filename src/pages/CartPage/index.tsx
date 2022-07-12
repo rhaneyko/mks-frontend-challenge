@@ -23,6 +23,7 @@ type Props = {
 
 const CartPage: React.FC<Props> = ({cartItems, addToCart, removeFromCart}) => {
   const [ active, setActive ] = useState('nav_menu');
+  
   const closeCartBar = () => {
     if(active === 'nav_menu') {
       setActive('nav_menu nav_active')
@@ -56,8 +57,6 @@ const CartPage: React.FC<Props> = ({cartItems, addToCart, removeFromCart}) => {
               <FinalizePurchase>
                 <p>Finalizar compra</p>
               </FinalizePurchase>
-
-
         </Container>
     )
     }
