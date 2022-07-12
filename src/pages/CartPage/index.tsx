@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import CartItem from './CartItem';
 
 import {
@@ -13,6 +13,7 @@ import {
 
 import { AiOutlineClose } from 'react-icons/ai'
 import { ItemAtCart } from '../../App';
+import { useDispatch, useSelector } from 'react-redux';
 
 type Props = {
   cartItems: ItemAtCart[];
@@ -31,6 +32,7 @@ const CartPage: React.FC<Props> = ({cartItems, addToCart, removeFromCart}) => {
 
   const calculateTotalAmount = (cartItems: ItemAtCart[]) => 
     cartItems.reduce((ack: number, item) => ack + item.amount * item.price, 0)
+    
     return (
         <Container>
           <HeaderCartBar>
@@ -48,7 +50,12 @@ const CartPage: React.FC<Props> = ({cartItems, addToCart, removeFromCart}) => {
               <ItemsCart>
                 {cartItems.length === 0 ? <p>Nenhum item no carrinho</p> : null}
                 {cartItems.map(item => (
-                  <CartItem key={item.id} item={item}   />
+                  <CartItem 
+                  key={item.id} 
+                  item={item}   
+                  removeFromCart={removeFromCart}
+                  addToCart={addToCart}
+                  />
                 ))}
               </ItemsCart>
               <TotalAmount>

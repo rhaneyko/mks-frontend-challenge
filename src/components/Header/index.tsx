@@ -32,16 +32,16 @@ const Navbar: React.FC<Props> = ({cartItems, addToCart, removeFromCart}) => {
     } else setIcon('nav_toggler')
   }
 
-  const closeCartBar = () => {
-    setActive('nav_menu')
-  }
+  const qtyItemsCart = cartItems.length;
 
    return(
-        <Container className='headerContainer flexSB' >
+        <Container>
           <LogoLarge>MKS <LogoSmall>Sistemas</LogoSmall></LogoLarge>
             <CartContainer onClick={navToggle} className={icon}>
               <img src={CartIcon} alt='cart'/>
-              <AmountItemCart>1</AmountItemCart>
+              <AmountItemCart>{
+                qtyItemsCart
+                }</AmountItemCart>
             </CartContainer>
             <CartBar className={active} > 
               <CartPage cartItems={cartItems} addToCart={addToCart} removeFromCart={removeFromCart} />
