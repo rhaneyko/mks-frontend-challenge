@@ -12,7 +12,10 @@ export const Item = styled.div`
 
     border-radius: 8px;
 
+    margin: 20px;
+
     box-shadow: -2px 2px 10px 0 rgba(0, 0, 0, 0.05);
+
 
     background-color: #FFF;
 `;

@@ -26,8 +26,8 @@ const CartPage: React.FC<Props> = ({cartItems, addToCart, removeFromCart}) => {
     setActive('nav_menu')
   }
 
-  const caculateTotalAmount = (cartItems: ItemAtCart[]) => 
-    cartItems.reduce((ack: number, item) => ack + item.price * item.amount, 0)
+  const calculateTotalAmount = (cartItems: ItemAtCart[]) => 
+    cartItems.reduce((ack: number, item) => ack + item.amount * item.price, 0)
     return (
         <Container>
           <HeaderCartBar>
@@ -48,7 +48,7 @@ const CartPage: React.FC<Props> = ({cartItems, addToCart, removeFromCart}) => {
               </ItemsCart>
               <TotalAmount>
                 <p>Total</p>
-                <p>R${caculateTotalAmount(cartItems).toFixed(2)}</p>
+                <p>R${calculateTotalAmount(cartItems).toFixed(0)}</p>
               </TotalAmount>
               <FinalizePurchase>
                 <p>Finalizar compra</p>
