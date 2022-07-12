@@ -8,6 +8,7 @@ import Skeleton from './components/Skeleton';
 
 import GlobalStyles from './styles/GlobalStyles';
 import theme from './styles/theme';
+import Product from './components/Product';
 
 export type ItemAtCart = {
   id: number;
@@ -18,14 +19,15 @@ export type ItemAtCart = {
   quantity: number;
 }
 
-type Props = {
-  cartItem: ItemAtCart[];
-  addToCart: (clickedItem: ItemAtCart) => void;
-  removeFromCart: (id: number) => void;
-}
+ type Props = {
+   product: ItemAtCart[];
+   cartItems: ItemAtCart[];
+   addToCart: (clickedItem: ItemAtCart) => void;
+   removeFromCart: (id: number) => void;
+ }
 
 
-const App: React.FC<Props> = ({cartItem, addToCart, removeFromCart}) => {
+const App: React.FC<Props> = ({product, addToCart, removeFromCart}) => {
   const [isLoading, setIsLoading] = useState(true);
   const width = useRef(window.innerWidth / 4).current;
 
@@ -74,11 +76,15 @@ const App: React.FC<Props> = ({cartItem, addToCart, removeFromCart}) => {
 
     <ThemeProvider theme={theme}>
       <Header
-        cartItem={cartItem}
+        cartItems={cartItems}
         addToCart={handleAddToCart}
         removeFromCart={removeFromCart}
       />
-      <HomePage />
+      <HomePage 
+        product={product}
+        addToCart={handleAddToCart}
+      />
+      
       <GlobalStyles/>
     </ThemeProvider>
   );

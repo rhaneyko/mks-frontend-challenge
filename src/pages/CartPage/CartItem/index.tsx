@@ -38,7 +38,10 @@ const CartItem: React.FC<Props> = ({item, addToCart, removeFromCart}) => {
     return(
         <Container>
          <Item>
-           <CartItemImage/>
+           <CartItemImage
+              src={item.photo}
+              alt={item.name}
+           />
             <CartItemName>
               {item.name}
            </CartItemName>

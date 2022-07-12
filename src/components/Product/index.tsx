@@ -12,7 +12,14 @@ import {
     BuyButtonText,
 } from './styles'
 import shoppingBag from '../../assets/shopping-bag.png'
-const Product: React.FC = () => {
+import { ItemAtCart } from '../../App';
+
+type Props = {
+  product: ItemAtCart[];
+  addToCart: (clickedItem: ItemAtCart) => void;
+}
+
+const Product: React.FC<Props> = ({product, addToCart}) => {
     const [ productsMks, setProductsMks ] = useState<any[]>([])
 
     useEffect(function(){
@@ -37,10 +44,10 @@ const Product: React.FC = () => {
                          </div>
                        </ProductInfos>
                       <ProductDescription>{product.description}</ProductDescription>
-                    <BuyButton>
+                    <BuyButton
+                    onClick={() => addToCart(product)}>
                         <img src={shoppingBag} alt='bag' />
-                        <BuyButtonText
-                        >Comprar</BuyButtonText>
+                        <BuyButtonText>Comprar</BuyButtonText>
                     </BuyButton>
                 </ProductCard>
             ))}
