@@ -18,7 +18,6 @@ type Props = {
   cartItems: ItemAtCart[];
   removeFromCart: (id: number) => void;
   closeCart: () => void;
-  
 }
 
 const Navbar: React.FC<Props> = ({cartItems, removeFromCart}) => {

@@ -20,7 +20,6 @@ type Props = {
   cartItems: ItemAtCart[];
   removeFromCart: (id: number) => void;
   closeCart: () => void;
-  
 }
 
 const CartPage: React.FC<Props> = ({cartItems, removeFromCart, closeCart}) => {

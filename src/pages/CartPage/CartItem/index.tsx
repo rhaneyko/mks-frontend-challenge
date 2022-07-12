@@ -30,7 +30,7 @@ const CartItem: React.FC<Props> = ({item, removeFromCart}) => {
     if (amount > 1) {
       setAmount(amount - 1);
     }
-  }
+   }
 
   const handlePlus = () => {
     setAmount(amount + 1);
@@ -68,7 +68,6 @@ const CartItem: React.FC<Props> = ({item, removeFromCart}) => {
               />
            </CloseCart>
          </Item>
-
     </Container>
     )
  
