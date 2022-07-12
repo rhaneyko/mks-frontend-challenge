@@ -41,7 +41,7 @@ export const ButtonCloseCartBar = styled.button`
 
    border-radius: 50%;
 
-   margin-top: -20px;
+   margin-top: -45px;
 
    background-color: black;
 `;
@@ -55,15 +55,11 @@ export const ItemsCart = styled.div`
     width: 100%;
     height: 65%;
 
-    p{
-        font-size: 20px;
-        font-weight: 700;
-        font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
 
-        color: #FFF;
-
-        margin-top: 250px;
-    }
+    color: #FFF;
 `;
 
 export const TotalAmount = styled.div`
@@ -75,13 +71,13 @@ export const TotalAmount = styled.div`
 
     padding: 0 68px 0 47px;
 
-    p{
-        font-size: 28px;
-        font-weight: 700;
-        font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
         
-        color: #FFF;
-    }
+    color: #FFF;
+
+    
 `;
 
 export const FinalizePurchase = styled.button`

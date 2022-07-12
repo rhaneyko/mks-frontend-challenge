@@ -1,12 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App, { ItemAtCart } from './App';
+import App from './App';
 
-type Props = {
-  cartItems: ItemAtCart[];
-  addToCart: (clickedItem: ItemAtCart) => void;
-  removeFromCart: (id: number) => void;
-}
 
 ReactDOM.render(
     <React.StrictMode>
@@ -14,7 +9,8 @@ ReactDOM.render(
       cartItems={[]}
       addToCart={() => { } }
       removeFromCart={() => { } } 
-      product={[]}              />
+      product={[]}              
+      />
     </React.StrictMode>,
     document.getElementById('root')
   );

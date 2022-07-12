@@ -18,15 +18,13 @@ import { ItemAtCart } from '../../../App';
 
 type Props = {
   item: ItemAtCart;
-  addToCart: (clickedItem: ItemAtCart) => void;
-  removeFromCart: (id: number) => void;
 }
 
-const CartItem: React.FC<Props> = ({item, addToCart, removeFromCart}) => {
-  const [amount, setAmount] = useState(1)
+const CartItem: React.FC<Props> = ({item,}) => {
+  const [amount, setAmount] = useState(1);
 
   const handleMinus = () => {
-    if (amount > 1) {
+    if(amount > 1) {
       setAmount(amount - 1)
     }
   }
@@ -34,6 +32,11 @@ const CartItem: React.FC<Props> = ({item, addToCart, removeFromCart}) => {
   const handlePlus = () => {
     setAmount(amount + 1)
   }
+
+
+
+  
+  
 
     return(
         <Container>
@@ -49,7 +52,9 @@ const CartItem: React.FC<Props> = ({item, addToCart, removeFromCart}) => {
             <MinusButton
               onClick={handleMinus}
             >-</MinusButton>
-            <ItemAmount>{amount}</ItemAmount>
+            <ItemAmount>
+              {amount}
+            </ItemAmount>
             <PlusButton
               onClick={handlePlus}
             >+</PlusButton>
@@ -58,10 +63,10 @@ const CartItem: React.FC<Props> = ({item, addToCart, removeFromCart}) => {
               R${item.price}
            </CartItemPrice>
            <CloseCart>
-                <AiOutlineClose
+              <AiOutlineClose
                 size={20}
                 color='#FFF'
-                />
+              />
            </CloseCart>
          </Item>
 

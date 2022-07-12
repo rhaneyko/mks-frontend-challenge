@@ -17,6 +17,7 @@ import { ItemAtCart } from '../../App';
 type Props = {
   product: ItemAtCart[];
   addToCart: (clickedItem: ItemAtCart) => void;
+  
 }
 
 const Product: React.FC<Props> = ({product, addToCart}) => {

@@ -8,7 +8,6 @@ import Skeleton from './components/Skeleton';
 
 import GlobalStyles from './styles/GlobalStyles';
 import theme from './styles/theme';
-import Product from './components/Product';
 
 export type ItemAtCart = {
   id: number;
@@ -20,7 +19,6 @@ export type ItemAtCart = {
 }
 
  type Props = {
-  
    product: ItemAtCart[];
    cartItems: ItemAtCart[];
    addToCart: (clickedItem: ItemAtCart) => void;
@@ -28,7 +26,12 @@ export type ItemAtCart = {
  }
 
 
+
 const App: React.FC<Props> = ({product, addToCart, removeFromCart}) => {
+
+
+
+
   const [isLoading, setIsLoading] = useState(true);
   const width = useRef(window.innerWidth / 4).current;
 

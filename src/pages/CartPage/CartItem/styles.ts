@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-    export const Container = styled.div``;
+export const Container = styled.div``;
 
 export const Item = styled.div`
     display: flex;
@@ -12,7 +12,9 @@ export const Item = styled.div`
 
     border-radius: 8px;
 
-    margin: 20px;
+    padding-left: 10px;
+    margin: 28px;
+
 
     box-shadow: -2px 2px 10px 0 rgba(0, 0, 0, 0.05);
 
@@ -22,18 +24,19 @@ export const Item = styled.div`
 
 export const CartItemImage = styled.img`
     display: flex;
-    width: 46px;
-    height: 57px;
-
-    background-color: red;
+    width: 70px;
+    height: 70px;
 `;
+
 export const CartItemName = styled.p`
+    width: 113px;
     font-family: 'Montserrat', sans-serif;
     font-size: 13px;
     font-weight: 400;
 
-    color: rgba(44, 44, 44, 1);
+    color: #2C2C2C;
 `;
+
 export const CartItemAmount = styled.div`
     display: flex;  
     flex-direction: row;
@@ -45,8 +48,6 @@ export const CartItemAmount = styled.div`
 
     border: 1px solid #BFBFBF;
     border-radius: 4px;
-
-
 `;
 
 export const MinusButton = styled.button`
