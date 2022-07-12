@@ -23,7 +23,9 @@ type Props = {
 const CartPage: React.FC<Props> = ({cartItems, addToCart, removeFromCart}) => {
   const [ active, setActive ] = useState('nav_menu');
   const closeCartBar = () => {
-    setActive('nav_menu')
+    if(active === 'nav_menu') {
+      setActive('nav_menu nav_active')
+    } else setActive('nav_menu')
   }
 
   const calculateTotalAmount = (cartItems: ItemAtCart[]) => 
