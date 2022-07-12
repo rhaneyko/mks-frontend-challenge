@@ -62,10 +62,13 @@ const CartItem: React.FC<Props> = ({item, removeFromCart}) => {
            <CartItemPrice>
               R${item.price}
            </CartItemPrice>
-           <CloseCart>
+           <CloseCart
+              onClick={() => removeFromCart(item.id)}
+           >
               <AiOutlineClose
                 size={20}
                 color='#FFF'
+                
               />
            </CloseCart>
          </Item>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import CartItem from './CartItem';
 
 import {
@@ -13,37 +13,33 @@ import {
 
 import { AiOutlineClose } from 'react-icons/ai'
 import { ItemAtCart } from '../../App';
-import { useDispatch, useSelector } from 'react-redux';
+
+
 
 type Props = {
   cartItems: ItemAtCart[];
   addToCart: (clickedItem: ItemAtCart) => void;
   removeFromCart: (id: number) => void;
+  closeCart: () => void;
 }
 
-const CartPage: React.FC<Props> = ({cartItems, addToCart, removeFromCart}) => {
-  const [ active, setActive ] = useState('nav_menu');
+const CartPage: React.FC<Props> = ({cartItems, addToCart, removeFromCart, closeCart}) => {
+  const finishPurchase = () => {}
   
-  const closeCartBar = () => {
-    if(active === 'nav_menu') {
-      setActive('nav_menu nav_active')
-    } else setActive('nav_menu')
-  }
-
   const calculateTotalAmount = (cartItems: ItemAtCart[]) => 
     cartItems.reduce((ack: number, item) => ack + item.amount * item.price, 0)
     
+
     return (
         <Container>
           <HeaderCartBar>
               <CartBarTitle>Carrinho de compras</CartBarTitle>
-              <ButtonCloseCartBar
-                onClick={closeCartBar}
-              >
+              <ButtonCloseCartBar>
                <AiOutlineClose 
                  size={30}
                  className='close'
                  color='#FFF'
+                 onClick={closeCart}
                />
               </ButtonCloseCartBar> 
               </HeaderCartBar>
@@ -62,7 +58,8 @@ const CartPage: React.FC<Props> = ({cartItems, addToCart, removeFromCart}) => {
                 <p>Total:</p>
                 <p>R${calculateTotalAmount(cartItems).toFixed(0)}</p>
               </TotalAmount>
-              <FinalizePurchase>
+              <FinalizePurchase
+                onClick={finishPurchase}>
                 <p>Finalizar compra</p>
               </FinalizePurchase>
         </Container>

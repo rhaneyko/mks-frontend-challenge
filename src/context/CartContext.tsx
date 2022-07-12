@@ -1,4 +1,3 @@
-import { type } from '@testing-library/user-event/dist/type'
 import { createContext, useContext } from 'react'
 
 type CartItem = {

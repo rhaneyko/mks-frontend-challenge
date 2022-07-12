@@ -43,7 +43,8 @@ import styled from 'styled-components';
     height: 929px;
 
     flex-direction: column;
-    left: 155vh;
+
+    right: 0;
     top: 0;
       
     position: absolute;
@@ -55,12 +56,16 @@ import styled from 'styled-components';
     z-index: 999;
 
     @media (max-width: 768px) {
-      left: 380px;
+      right: 0;
       width: 380px;
     }
   }
   .nav_active {
-    transform: translateX(0%);
+    transform: translateX(0);
+
+    @media (max-width: 768px) {
+      transform: translateX(0);
+    }
   }
 `;
 
@@ -106,4 +111,5 @@ export const AmountItemCart = styled.p`
 export const CartBar = styled.div`
   display: flex;
   flex-direction: column;
+
 `;

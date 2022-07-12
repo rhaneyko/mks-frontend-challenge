@@ -9,7 +9,8 @@ ReactDOM.render(
       cartItems={[]}
       addToCart={() => { } }
       removeFromCart={() => { } } 
-      product={[]}              
+      product={[]}        
+      closeCart={() => { } }      
       />
     </React.StrictMode>,
     document.getElementById('root')

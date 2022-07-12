@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+
 import { ThemeProvider } from 'styled-components';
 
 import Header from './components/Header';
@@ -23,15 +24,10 @@ export type ItemAtCart = {
    cartItems: ItemAtCart[];
    addToCart: (clickedItem: ItemAtCart) => void;
    removeFromCart: (id: number) => void;
+   closeCart: () => void;
  }
 
-
-
-const App: React.FC<Props> = ({product, addToCart, removeFromCart}) => {
-
-
-
-
+const App: React.FC<Props> = ({product, addToCart, removeFromCart, closeCart}) => {
   const [isLoading, setIsLoading] = useState(true);
   const width = useRef(window.innerWidth / 4).current;
 
@@ -83,6 +79,7 @@ const App: React.FC<Props> = ({product, addToCart, removeFromCart}) => {
         cartItems={cartItems}
         addToCart={handleAddToCart}
         removeFromCart={removeFromCart}
+        closeCart={closeCart}
       />
       <HomePage 
         product={product}
