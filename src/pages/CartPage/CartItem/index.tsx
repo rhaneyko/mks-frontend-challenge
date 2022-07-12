@@ -40,6 +40,12 @@ const CartItem: React.FC<Props> = ({item, removeFromCart}) => {
   //    removeFromCart(item.id);
   // }
 
+  const itemTotal = () => {
+    return amount * item.price;
+  }
+
+  const itemPrice = item.price * amount;
+
     return(
         <Container>
          <Item>
@@ -58,11 +64,11 @@ const CartItem: React.FC<Props> = ({item, removeFromCart}) => {
               {amount}
             </ItemAmount>
             <PlusButton
-            onClick={() => updateItemQty(amount)}
+              onClick={() => updateItemQty(amount)}
             >+</PlusButton>
            </CartItemAmount>
            <CartItemPrice>
-              R$ {item.price}
+              R$ {itemTotal()}
            </CartItemPrice>
            <CloseCart
               onClick={() => removeFromCart(item.id)}>
