@@ -3,14 +3,14 @@ import React, { useState } from 'react'
 import {
     Container,
     Item,
-        CartItemImage,
-        CartItemName,
-        CartItemAmount,
-        MinusButton,
-        PlusButton,
-        ItemAmount,
-        CartItemPrice,
-        CloseCart,
+    CartItemImage,
+    CartItemName,
+    CartItemAmount,
+    MinusButton,
+    PlusButton,
+    ItemAmount,
+    CartItemPrice,
+    CloseCart,
 } from './styles'
 
 import { AiOutlineClose } from 'react-icons/ai'
@@ -43,8 +43,6 @@ const CartItem: React.FC<Props> = ({item, removeFromCart}) => {
   const itemTotal = () => {
     return amount * item.price;
   }
-
-  const itemPrice = item.price * amount;
 
     return(
         <Container>
