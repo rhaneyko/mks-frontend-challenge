@@ -20,6 +20,7 @@ export type ItemAtCart = {
 }
 
  type Props = {
+  
    product: ItemAtCart[];
    cartItems: ItemAtCart[];
    addToCart: (clickedItem: ItemAtCart) => void;

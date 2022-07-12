@@ -15,6 +15,7 @@ import { AiOutlineClose } from 'react-icons/ai'
 import { ItemAtCart } from '../../App';
 
 type Props = {
+
   cartItems: ItemAtCart[];
   addToCart: (clickedItem: ItemAtCart) => void;
   removeFromCart: (id: number) => void;
@@ -34,7 +35,7 @@ const CartPage: React.FC<Props> = ({cartItems, addToCart, removeFromCart}) => {
         <Container>
           <HeaderCartBar>
               <CartBarTitle>Carrinho de compras</CartBarTitle>
-              <ButtonCloseCartBar onClick={closeCartBar}>    
+              <ButtonCloseCartBar onClick={() => removeFromCart(ItemsCart.id)}>    
                <AiOutlineClose 
                  size={30}
                  className='close'
