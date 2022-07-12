@@ -71,7 +71,6 @@ const App: React.FC<Props> = ({closeCart}) => {
       </div>
     </div>
     )
-    
   }
   return (
 
