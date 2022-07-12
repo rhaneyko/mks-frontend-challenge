@@ -7,11 +7,10 @@ ReactDOM.render(
     <React.StrictMode>
       <App 
       cartItems={[]}
-      addToCart={() => { } }
-      removeFromCart={() => { } } 
       product={[]}        
-      closeCart={() => { } }      
+      closeCart={() => {}}
       />
+
     </React.StrictMode>,
     document.getElementById('root')
   );

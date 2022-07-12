@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import CartItem from './CartItem';
 
 import {
@@ -21,6 +21,7 @@ type Props = {
   addToCart: (clickedItem: ItemAtCart) => void;
   removeFromCart: (id: number) => void;
   closeCart: () => void;
+  
 }
 
 const CartPage: React.FC<Props> = ({cartItems, addToCart, removeFromCart, closeCart}) => {
@@ -28,7 +29,6 @@ const CartPage: React.FC<Props> = ({cartItems, addToCart, removeFromCart, closeC
   
   const calculateTotalAmount = (cartItems: ItemAtCart[]) => 
     cartItems.reduce((ack: number, item) => ack + item.amount * item.price, 0)
-    
 
     return (
         <Container>
@@ -56,7 +56,8 @@ const CartPage: React.FC<Props> = ({cartItems, addToCart, removeFromCart, closeC
               </ItemsCart>
               <TotalAmount>
                 <p>Total:</p>
-                <p>R${calculateTotalAmount(cartItems).toFixed(0)}</p>
+                <p>R${calculateTotalAmount(cartItems)}
+                </p>
               </TotalAmount>
               <FinalizePurchase
                 onClick={finishPurchase}>

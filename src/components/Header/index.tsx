@@ -19,6 +19,7 @@ type Props = {
   addToCart: (clickedItem: ItemAtCart) => void;
   removeFromCart: (id: number) => void;
   closeCart: () => void;
+  
 }
 
 const Navbar: React.FC<Props> = ({cartItems, addToCart, removeFromCart}) => {

@@ -17,11 +17,8 @@ const HomePage: React.FC<Props> = ({product, addToCart}) => {
         <Container>
             <CardsContainer>
                     <ProductPage
-                      
                       product={product}
                       addToCart={addToCart}
-
-
                     />
             </CardsContainer>
               

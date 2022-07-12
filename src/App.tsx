@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { ThemeProvider } from 'styled-components';
 
@@ -22,18 +22,16 @@ export type ItemAtCart = {
  type Props = {
    product: ItemAtCart[];
    cartItems: ItemAtCart[];
-   addToCart: (clickedItem: ItemAtCart) => void;
-   removeFromCart: (id: number) => void;
    closeCart: () => void;
  }
 
-const App: React.FC<Props> = ({product, addToCart, removeFromCart, closeCart}) => {
+const App: React.FC<Props> = ({product, closeCart}) => {
   const [isLoading, setIsLoading] = useState(true);
-  const width = useRef(window.innerWidth / 4).current;
+  //const width = useRef(window.innerWidth / 4).current;
 
   const [ cartItems, setCartItems ] = useState([] as ItemAtCart[]);
 
-  const handleAddToCart = (clickedItem: ItemAtCart) => {
+  const addItemToCart = (clickedItem: ItemAtCart) => {
     setCartItems(prev => {
       const isItemInCart = prev.find(item => item.id === clickedItem.id);
 
@@ -48,7 +46,11 @@ const App: React.FC<Props> = ({product, addToCart, removeFromCart, closeCart}) =
     });
   }; 
 
-
+  const removeItemFromCart = (id: number) => {
+    setCartItems(prev => {
+      return prev.filter(item => item.id !== id);
+    });
+  }
 
   useEffect(() => {
     setTimeout(() => {
@@ -77,13 +79,14 @@ const App: React.FC<Props> = ({product, addToCart, removeFromCart, closeCart}) =
     <ThemeProvider theme={theme}>
       <Header
         cartItems={cartItems}
-        addToCart={handleAddToCart}
-        removeFromCart={removeFromCart}
+        addToCart={addItemToCart}
+        removeFromCart={removeItemFromCart}
         closeCart={closeCart}
       />
       <HomePage 
         product={product}
-        addToCart={handleAddToCart}
+        addToCart={addItemToCart}
+
       />
       
       <GlobalStyles/>
