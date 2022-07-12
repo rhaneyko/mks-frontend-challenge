@@ -15,12 +15,11 @@ import shoppingBag from '../../assets/shopping-bag.png'
 import { ItemAtCart } from '../../App';
 
 type Props = {
-  product: ItemAtCart[];
   addToCart: (clickedItem: ItemAtCart) => void;
   
 }
 
-const Product: React.FC<Props> = ({product, addToCart}) => {
+const Product: React.FC<Props> = ({ addToCart}) => {
     const [ productsMks, setProductsMks ] = useState<any[]>([])
 
     useEffect(function(){

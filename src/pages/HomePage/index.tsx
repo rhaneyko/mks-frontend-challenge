@@ -7,21 +7,17 @@ import {
 } from './styles'
 
 type Props = {
-    product: ItemAtCart[];
     addToCart: (clickedItem: ItemAtCart) => void;
 }
 
-const HomePage: React.FC<Props> = ({product, addToCart}) => {
+const HomePage: React.FC<Props> = ({addToCart}) => {
 
     return (
         <Container>
             <CardsContainer>
-                    <ProductPage
-                      product={product}
-                      addToCart={addToCart}
-                    />
+                 <ProductPage
+                    addToCart={addToCart}/>
             </CardsContainer>
-              
         </Container>
     )
 }

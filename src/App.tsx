@@ -84,7 +84,6 @@ const App: React.FC<Props> = ({product, closeCart}) => {
         closeCart={closeCart}
       />
       <HomePage 
-        product={product}
         addToCart={addItemToCart}
 
       />
