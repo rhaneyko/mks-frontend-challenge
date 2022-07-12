@@ -1,5 +1,6 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default `
+
     .skeleton{
         background-image: linear-gradient(
             -90deg,
@@ -13,7 +14,7 @@ export default `
 
         @keyframes shimmer {
             0% {
-                background-position: 0% 0%
+                background-position: 0% 0%;
 
             }
             100% {

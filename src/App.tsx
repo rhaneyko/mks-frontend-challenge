@@ -60,7 +60,7 @@ const App: React.FC<Props> = ({closeCart}) => {
   if (isLoading) {
     return (
     <div className='App'>
-      <div  className='header'>
+      <div className='header'>
         <Skeleton width={200} height={40} />
         <Skeleton width={90} height={20} borderRadius={20}/>
       </div>
