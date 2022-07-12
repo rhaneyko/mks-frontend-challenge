@@ -54,6 +54,16 @@ export const ItemsCart = styled.div`
 
     width: 100%;
     height: 65%;
+
+    p{
+        font-size: 20px;
+        font-weight: 700;
+        font-family: 'Montserrat', sans-serif;
+
+        color: #FFF;
+
+        margin-top: 250px;
+    }
 `;
 
 export const TotalAmount = styled.div`
