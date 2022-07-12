@@ -19,10 +19,6 @@ import { ItemAtCart } from '../../../App';
 type Props = {
   item: ItemAtCart;
   removeFromCart: (id: number) => void;
-  addToCart: (clickedItem: ItemAtCart) => void;
-  
-  
-
 }
 
 const CartItem: React.FC<Props> = ({item, removeFromCart}) => {

@@ -20,12 +20,11 @@ export type ItemAtCart = {
 }
 
  type Props = {
-   product: ItemAtCart[];
-   cartItems: ItemAtCart[];
-   closeCart: () => void;
+  cartItems: ItemAtCart[];
+  closeCart: () => void;
  }
 
-const App: React.FC<Props> = ({product, closeCart}) => {
+const App: React.FC<Props> = ({closeCart}) => {
   const [isLoading, setIsLoading] = useState(true);
   //const width = useRef(window.innerWidth / 4).current;
 
@@ -79,7 +78,6 @@ const App: React.FC<Props> = ({product, closeCart}) => {
     <ThemeProvider theme={theme}>
       <Header
         cartItems={cartItems}
-        addToCart={addItemToCart}
         removeFromCart={removeItemFromCart}
         closeCart={closeCart}
       />

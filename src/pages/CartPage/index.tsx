@@ -18,13 +18,12 @@ import { ItemAtCart } from '../../App';
 
 type Props = {
   cartItems: ItemAtCart[];
-  addToCart: (clickedItem: ItemAtCart) => void;
   removeFromCart: (id: number) => void;
   closeCart: () => void;
   
 }
 
-const CartPage: React.FC<Props> = ({cartItems, addToCart, removeFromCart, closeCart}) => {
+const CartPage: React.FC<Props> = ({cartItems, removeFromCart, closeCart}) => {
   const finishPurchase = () => {}
   
   const calculateTotalAmount = (cartItems: ItemAtCart[]) => 
@@ -50,7 +49,6 @@ const CartPage: React.FC<Props> = ({cartItems, addToCart, removeFromCart, closeC
                   key={item.id} 
                   item={item}   
                   removeFromCart={removeFromCart}
-                  addToCart={addToCart}
                   />
                 ))}
               </ItemsCart>
