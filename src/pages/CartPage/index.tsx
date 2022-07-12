@@ -51,7 +51,7 @@ const CartPage: React.FC<Props> = ({cartItems, addToCart, removeFromCart}) => {
                 ))}
               </ItemsCart>
               <TotalAmount>
-                <p>Total</p>
+                <p>Total:</p>
                 <p>R${calculateTotalAmount(cartItems).toFixed(0)}</p>
               </TotalAmount>
               <FinalizePurchase>
@@ -59,5 +59,5 @@ const CartPage: React.FC<Props> = ({cartItems, addToCart, removeFromCart}) => {
               </FinalizePurchase>
         </Container>
     )
-    }
+}
 export default CartPage;
