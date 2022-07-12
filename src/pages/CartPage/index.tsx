@@ -27,7 +27,7 @@ const CartPage: React.FC<Props> = ({cartItems, removeFromCart, closeCart}) => {
   
    const calculateTotalAmount = (cartItems: ItemAtCart[]) => 
     cartItems.reduce((ack: number, item) => ack + item.amount * item.price, 0)
-    
+
     return (
         <Container>
           <HeaderCartBar>
