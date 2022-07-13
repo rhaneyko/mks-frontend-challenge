@@ -51,8 +51,8 @@ const Product: React.FC<Props> = ({ addToCart}) => {
                          </div>
                        </ProductInfos>
                       <ProductDescription>{product.description}</ProductDescription>
-                    <BuyButton
-                    onClick={() => addToCart(product)}>
+                    <BuyButton 
+                     onClick={() => addToCart(product)}>
                         <img src={shoppingBag} alt='bag' />
                         <BuyButtonText>Comprar</BuyButtonText>
                     </BuyButton>
