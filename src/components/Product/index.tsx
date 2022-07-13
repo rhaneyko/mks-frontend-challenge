@@ -33,8 +33,7 @@ const Product: React.FC<Props> = ({ addToCart}) => {
             return new Intl.NumberFormat('pt-BR', {
                 style: 'currency',
                 currency: 'BRL',
-            }).format(price)
-        }
+            }).format(price)}
 
         return (
           <Container className='grid-container'>
