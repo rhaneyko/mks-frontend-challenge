@@ -81,8 +81,7 @@ const App: React.FC<Props> = ({closeCart}) => {
         cartItems={cartItems}
         removeFromCart={removeItemFromCart}
         closeCart={closeCart}
-        
-      />
+      ></Header>
       <HomePage 
         addToCart={addItemToCart}
       />
