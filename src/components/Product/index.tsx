@@ -13,7 +13,6 @@ import {
 } from './styles'
 import shoppingBag from '../../assets/shopping-bag.png'
 import { ItemAtCart } from '../../App';
-import Skeleton from '../Skeleton';
 
 type Props = {
   addToCart: (clickedItem: ItemAtCart) => void;
