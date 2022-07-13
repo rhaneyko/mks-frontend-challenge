@@ -27,7 +27,7 @@ const Product: React.FC<Props> = ({ addToCart}) => {
         .then(completeProductResponse => {
             setProductsMks(completeProductResponse.products)
         })
-        })
+      })
 
         const priceItem = (price: number) => {
             return new Intl.NumberFormat('pt-BR', {

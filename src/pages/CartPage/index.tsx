@@ -33,6 +33,7 @@ const CartPage: React.FC<Props> = ({cartItems, removeFromCart, closeCart,}) => {
     return cartItems.reduce((acc, item) => {
       return acc + item.price * item.amount
     }, 0)}
+    
 
     return (
         <Container>
