@@ -23,24 +23,17 @@ type Props = {
 }
 
 const CartItem: React.FC<Props> = ({item, removeFromCart, addToCart}) => {
-  const [amount, setAmount] = useState(1);
-  const [price, setPrice] = useState(item.price);
-
-
-   const updateItemQty = (amount: number) => {
-     setAmount(amount + 1);
-   }
-
-   const removeItemQty = () => {
-     setAmount(amount - 1);
-      setPrice(amount * item.price);
-   }
-
-   const setThePrice = (price: number) => {
-      setAmount( amount + 1);
-      setPrice(amount * item.price);
+  const [price, setPrice] = useState(item.price)   
+  
+  const handlePlusButton = () => {
+        const newAmount = item.amount + 1 * item.price
+        setPrice(newAmount)
     }
 
+    const handleMinusButton = () => {
+        const newAmount = item.amount - 1 * item.price
+        setPrice(newAmount)
+    }
 
     return(
         <Container>
@@ -54,13 +47,12 @@ const CartItem: React.FC<Props> = ({item, removeFromCart, addToCart}) => {
            </CartItemName>
            <CartItemAmount>
             <MinusButton
-              onClick={removeItemQty}
             >-</MinusButton>
             <ItemAmount>
               {item.amount}
             </ItemAmount>
             <PlusButton
-              onClick={() => setThePrice(item.price)}
+              onClick={handlePlusButton}
             >+</PlusButton>
            </CartItemAmount>
            <CartItemPrice>
