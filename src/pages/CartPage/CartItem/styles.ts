@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
 `;
 
-export const Item = styled.div`
+export const Item = styled.li`
     display: flex;
     width: 379px;
     height: 95px;

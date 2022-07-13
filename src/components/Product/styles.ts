@@ -29,8 +29,6 @@ export const ProductImage = styled.img`
     height: 140px;
 
     margin: 5px 0 10px 0;
-
-    background-color: red;
 `;
 
 export const ProductInfos = styled.div`

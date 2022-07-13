@@ -9,6 +9,7 @@ ReactDOM.render(
       cartItems={[]}
       closeCart={() => {}}
       addToCart={() => {}}
+     
       />
 
     </React.StrictMode>,

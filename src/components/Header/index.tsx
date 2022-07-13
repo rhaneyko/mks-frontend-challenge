@@ -18,10 +18,9 @@ type Props = {
   cartItems: ItemAtCart[];
   removeFromCart: (id: number) => void;
   closeCart: () => void;
-  addToCart: (clickedItem: ItemAtCart) => void;
 }
 
-const Navbar: React.FC<Props> = ({cartItems, removeFromCart, addToCart}) => {
+const Navbar: React.FC<Props> = ({cartItems, removeFromCart}) => {
   const [ active, setActive ] = useState('nav_menu');
   const navToggle = () => {
     if (active === 'nav_menu') {
@@ -48,7 +47,6 @@ const Navbar: React.FC<Props> = ({cartItems, removeFromCart, addToCart}) => {
                cartItems={cartItems}
                removeFromCart={removeFromCart}
                closeCart={closeCartBar}
-               addToCart={addToCart}
               />
             </CartBar>
         </Container>

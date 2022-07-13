@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 
 import {
     Container,
@@ -19,29 +19,37 @@ import { ItemAtCart } from '../../../App';
 type Props = {
   item: ItemAtCart;
   removeFromCart: (id: number) => void;
-  addToCart: (clickedItem: ItemAtCart) => void;
 }
 
-const CartItem: React.FC<Props> = ({item, removeFromCart, addToCart}) => {
-  const [price, setPrice] = useState(item.price)   
-  
-  const handlePlusButton = () => {
-        const newAmount = item.amount + 1 * item.price
-        setPrice(newAmount)
-    }
 
-    const handleMinusButton = () => {
-        const newAmount = item.amount - 1 * item.price
-        setPrice(newAmount)
-    }
+const CartItem: React.FC<Props> = ({item, removeFromCart, }) => {
+  const [amount, setAmount] = useState(item.amount)
 
-    return(
+  useEffect(() => {
+    setAmount(item.amount)
+  }
+  , [item.amount])
+
+  const handleMinus = () => {
+    if (amount > 1) {
+      setAmount(amount - 1)
+    }
+  }
+
+  const handlePlus = () => {
+    setAmount(amount + 1)
+  }
+
+
+
+
+
+  return(
         <Container>
          <Item>
            <CartItemImage
               src={item.photo}
-              alt={item.name}
-           />
+              alt={item.name}/>
             <CartItemName>
               {item.name}
            </CartItemName>
@@ -52,15 +60,14 @@ const CartItem: React.FC<Props> = ({item, removeFromCart, addToCart}) => {
               {item.amount}
             </ItemAmount>
             <PlusButton
-              onClick={handlePlusButton}
-            >+</PlusButton>
+                
+              >+</PlusButton>
            </CartItemAmount>
            <CartItemPrice>
               R$ {item.price}
            </CartItemPrice>
            <CloseCart
-              onClick={() => removeFromCart(item.id)}
-              >
+              onClick={() => removeFromCart(item.id)}>
               <AiOutlineClose
                 size={20}
                 color='#FFF'
@@ -69,7 +76,6 @@ const CartItem: React.FC<Props> = ({item, removeFromCart, addToCart}) => {
          </Item>
     </Container>
     )
- 
-}
+  }
 
 export default CartItem;

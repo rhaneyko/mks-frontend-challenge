@@ -8,6 +8,9 @@ export const Container = styled.div`
     justify-content: space-between;
 
     height: 100%;
+
+    
+    
 `;
 
 export const HeaderCartBar = styled.header`
@@ -60,6 +63,16 @@ export const ItemsCart = styled.div`
     font-family: 'Montserrat', sans-serif;
 
     color: #FFF;
+
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      width: 7px;
+}
+    ::-webkit-scrollbar-thumb {
+        background-color: #F0F0F0;
+        border-radius: 5px;
+    }
 `;
 
 export const TotalAmount = styled.div`

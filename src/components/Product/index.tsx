@@ -16,11 +16,12 @@ import { ItemAtCart } from '../../App';
 
 type Props = {
   addToCart: (clickedItem: ItemAtCart) => void;
-  
 }
 
 const Product: React.FC<Props> = ({ addToCart}) => {
     const [ productsMks, setProductsMks ] = useState<any[]>([])
+
+    
 
     useEffect(function(){
         fetch('https://mks-frontend-challenge-api.herokuapp.com/api/v1/products?page=1&rows=10&sortBy=id&orderBy=DESC')
