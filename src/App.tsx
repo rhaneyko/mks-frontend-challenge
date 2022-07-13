@@ -14,6 +14,7 @@ export type ItemAtCart = {
   id: number;
   photo: string;
   name: string;
+  description: string;
   price: number;
   amount: number;
   quantity: number;
@@ -22,6 +23,7 @@ export type ItemAtCart = {
  type Props = {
   cartItems: ItemAtCart[];
   closeCart: () => void;
+  addToCart: (clickedItem: ItemAtCart) => void;
  }
 
 const App: React.FC<Props> = ({closeCart}) => {
@@ -79,10 +81,10 @@ const App: React.FC<Props> = ({closeCart}) => {
         cartItems={cartItems}
         removeFromCart={removeItemFromCart}
         closeCart={closeCart}
+        addToCart={addItemToCart}
       />
       <HomePage 
         addToCart={addItemToCart}
-
       />
       
       <GlobalStyles/>

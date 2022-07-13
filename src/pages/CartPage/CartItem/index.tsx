@@ -19,30 +19,28 @@ import { ItemAtCart } from '../../../App';
 type Props = {
   item: ItemAtCart;
   removeFromCart: (id: number) => void;
+  addToCart: (clickedItem: ItemAtCart) => void;
 }
 
-const CartItem: React.FC<Props> = ({item, removeFromCart}) => {
+const CartItem: React.FC<Props> = ({item, removeFromCart, addToCart}) => {
   const [amount, setAmount] = useState(1);
-  const [totalAmount, setTotalAmount] = useState(item.price);
+  const [price, setPrice] = useState(item.price);
 
 
-  const updateItemQty = (amount: number) => {
-    setAmount(amount + 1);
-    setTotalAmount(totalAmount + item.price);
-  }
+   const updateItemQty = (amount: number) => {
+     setAmount(amount + 1);
+   }
 
-  const removeItemQty = () => {
-    setAmount(amount - 1);
-    setTotalAmount(totalAmount - item.price);
-  }
+   const removeItemQty = () => {
+     setAmount(amount - 1);
+      setPrice(amount * item.price);
+   }
 
-  // const removeItem = () => {
-  //    removeFromCart(item.id);
-  // }
+   const setThePrice = (price: number) => {
+      setAmount( amount + 1);
+      setPrice(amount * item.price);
+    }
 
-  const itemTotal = () => {
-    return amount * item.price;
-  }
 
     return(
         <Container>
@@ -59,17 +57,18 @@ const CartItem: React.FC<Props> = ({item, removeFromCart}) => {
               onClick={removeItemQty}
             >-</MinusButton>
             <ItemAmount>
-              {amount}
+              {item.amount}
             </ItemAmount>
             <PlusButton
-              onClick={() => updateItemQty(amount)}
+              onClick={() => setThePrice(item.price)}
             >+</PlusButton>
            </CartItemAmount>
            <CartItemPrice>
-              R$ {itemTotal()}
+              R$ {item.price}
            </CartItemPrice>
            <CloseCart
-              onClick={() => removeFromCart(item.id)}>
+              onClick={() => removeFromCart(item.id)}
+              >
               <AiOutlineClose
                 size={20}
                 color='#FFF'

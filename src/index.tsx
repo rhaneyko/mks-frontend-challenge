@@ -8,6 +8,7 @@ ReactDOM.render(
       <App 
       cartItems={[]}
       closeCart={() => {}}
+      addToCart={() => {}}
       />
 
     </React.StrictMode>,

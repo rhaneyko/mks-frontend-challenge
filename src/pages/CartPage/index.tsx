@@ -20,13 +20,17 @@ type Props = {
   cartItems: ItemAtCart[];
   removeFromCart: (id: number) => void;
   closeCart: () => void;
+  addToCart: (clickedItem: ItemAtCart) => void;
 }
 
-const CartPage: React.FC<Props> = ({cartItems, removeFromCart, closeCart}) => {
+const CartPage: React.FC<Props> = ({cartItems, removeFromCart, closeCart, addToCart}) => {
   const finishPurchase = () => {}
   
-   const calculateTotalAmount = (cartItems: ItemAtCart[]) => 
-    cartItems.reduce((ack: number, item) => ack + item.amount * item.price, 0)
+  
+    const calculateTotalAmount = (cartItems: ItemAtCart[]) => 
+     cartItems.reduce((ack: number, item) => ack + item.amount * item.price, 0)
+
+     
 
     return (
         <Container>
@@ -48,6 +52,7 @@ const CartPage: React.FC<Props> = ({cartItems, removeFromCart, closeCart}) => {
                   key={item.id} 
                   item={item}   
                   removeFromCart={removeFromCart}
+                  addToCart={addToCart}
                   />
                 ))}
               </ItemsCart>

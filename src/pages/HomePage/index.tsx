@@ -16,6 +16,7 @@ const HomePage: React.FC<Props> = ({addToCart}) => {
         <Container>
             <CardsContainer>
                  <ProductPage
+                    
                     addToCart={addToCart}/>
             </CardsContainer>
         </Container>
