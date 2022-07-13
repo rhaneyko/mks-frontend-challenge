@@ -24,25 +24,20 @@ type Props = {
 
 const CartItem: React.FC<Props> = ({item, removeFromCart, }) => {
   const [amount, setAmount] = useState(item.amount)
+  const [price, setPrice] = useState(item.price)
 
-  useEffect(() => {
-    setAmount(item.amount)
-  }
-  , [item.amount])
-
-  const handleMinus = () => {
-    if (amount > 1) {
-      setAmount(amount - 1)
-    }
+  const formatPrice = (price: number) => {
+    return new Intl.NumberFormat('pt-BR', {
+      style: 'currency',
+      currency: 'BRL',
+    }).format(price)
   }
 
-  const handlePlus = () => {
-    setAmount(amount + 1)
+  const priceTotal = (cartItems: ItemAtCart[]) => {
+    return cartItems.reduce((acc, item) => {
+      return acc + item.price * item.amount
+    }, 0)
   }
-
-
-
-
 
   return(
         <Container>
@@ -55,16 +50,23 @@ const CartItem: React.FC<Props> = ({item, removeFromCart, }) => {
            </CartItemName>
            <CartItemAmount>
             <MinusButton
+              onClick={() => {
+                setAmount((oldAmound) => oldAmound - 1)
+                setPrice((oldPrice) => oldPrice - item.price)
+              }}
             >-</MinusButton>
             <ItemAmount>
-              {item.amount}
+              {amount}
             </ItemAmount>
             <PlusButton
-                
-              >+</PlusButton>
+              onClick={() => {
+                setAmount((oldAmound) => oldAmound + 1)
+                setPrice((oldPrice) => oldPrice + item.price)
+              }}
+            >+</PlusButton>
            </CartItemAmount>
            <CartItemPrice>
-              R$ {item.price}
+              R$ {formatPrice(priceTotal([item]))}
            </CartItemPrice>
            <CloseCart
               onClick={() => removeFromCart(item.id)}>

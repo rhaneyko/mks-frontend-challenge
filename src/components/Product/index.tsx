@@ -29,6 +29,13 @@ const Product: React.FC<Props> = ({ addToCart}) => {
         })
         })
 
+        const priceItem = (price: number) => {
+            return new Intl.NumberFormat('pt-BR', {
+                style: 'currency',
+                currency: 'BRL',
+            }).format(price)
+        }
+
         return (
           <Container className='grid-container'>
              {productsMks.map(product => (
@@ -39,7 +46,9 @@ const Product: React.FC<Props> = ({ addToCart}) => {
                           <ProductTitle>{product.name}</ProductTitle>
                         </div>
                          <div style={{backgroundColor: '#373737', width: 80, height: 25, padding: 4, marginLeft: 10, borderRadius: 5}} >
-                           <ProductPrice>R${product.price}</ProductPrice>
+                           <ProductPrice>
+                              {priceItem(product.price)}
+                           </ProductPrice>
                          </div>
                        </ProductInfos>
                       <ProductDescription>{product.description}</ProductDescription>

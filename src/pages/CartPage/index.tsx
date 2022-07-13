@@ -21,7 +21,7 @@ type Props = {
   closeCart: () => void;
 }
 
-const CartPage: React.FC<Props> = ({cartItems, removeFromCart, closeCart}) => {
+const CartPage: React.FC<Props> = ({cartItems, removeFromCart, closeCart,}) => {
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat('pt-BR', {
       style: 'currency',
@@ -32,9 +32,7 @@ const CartPage: React.FC<Props> = ({cartItems, removeFromCart, closeCart}) => {
   const priceTotal = (cartItems: ItemAtCart[]) => {
     return cartItems.reduce((acc, item) => {
       return acc + item.price * item.amount
-    }, 0)
-  }
-
+    }, 0)}
 
     return (
         <Container>
@@ -64,7 +62,6 @@ const CartPage: React.FC<Props> = ({cartItems, removeFromCart, closeCart}) => {
                 <p>{formatPrice(priceTotal(cartItems))}</p>
               </TotalAmount>
               <FinalizePurchase>
-
                 <p>Finalizar compra</p>
               </FinalizePurchase>
         </Container>
