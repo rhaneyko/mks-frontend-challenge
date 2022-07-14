@@ -82,7 +82,7 @@ export const LogoSmall = styled.p`
   font-size: 20px;
   font-weight: 300;
 
-  margin-left: 95px;
+  margin-left: 105px;
   margin-top: -30px;
 `;
 
