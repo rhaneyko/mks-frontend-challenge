@@ -7,7 +7,7 @@ export default {
         background: '#FFFFFF',
         headerBackground: '#210124',
         cardBackground: '#FFFFFF',
-        text: '#2C2C2C',
+        text: '#210124',
         buttonBackground: '#210124',
         borderButton: '#210124',
     }

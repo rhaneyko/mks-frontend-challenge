@@ -8,9 +8,6 @@ export const Container = styled.div`
     justify-content: space-between;
 
     height: 100%;
-
-    
-    
 `;
 
 export const HeaderCartBar = styled.header`
@@ -91,8 +88,6 @@ export const TotalAmount = styled.div`
     font-family: 'Montserrat', sans-serif;
         
     color: #FFF;
-
-    
 `;
 
 export const FinalizePurchase = styled.button`
@@ -100,19 +95,22 @@ export const FinalizePurchase = styled.button`
     align-items: center;
     justify-content: center;
 
-    width: 100%;
-    height: 97px;
+    width: 50%;
+    height: 50px;
 
-    background-color: #000;
+    margin-bottom: 10px;
+
+    border-radius: 50px;
+
+    background-color: #FFF;
 
     cursor: pointer;
 
     p{
-        font-size: 28px;
+        font-size: 20px;
         font-weight: 700;
         font-family: 'Montserrat', sans-serif;
 
-        color: #FFF;
-
+        color: #210124;
     }
 `;

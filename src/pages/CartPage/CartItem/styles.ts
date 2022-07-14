@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
 `;
 
-export const Item = styled.li`
+export const Item = styled.div`
     display: flex;
     width: 379px;
     height: 95px;
@@ -14,10 +14,9 @@ export const Item = styled.li`
     border-radius: 8px;
 
     padding-left: 10px;
-    margin: 28px;
 
-    box-shadow: -2px 2px 10px 0 rgba(0, 0, 0, 0.05);
-
+    margin: 10px;
+    
     background-color: #FFF;
 `;
 
