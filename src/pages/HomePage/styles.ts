@@ -23,4 +23,6 @@ export const Header = styled.div`
 export const CardsContainer = styled.div`
     display: flex;
     flex-direction: row;
+
+    margin-top: 70px;
 `;

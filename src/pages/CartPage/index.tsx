@@ -43,7 +43,7 @@ const CartPage: React.FC<Props> = ({cartItems, removeFromCart, closeCart}) => {
                <AiOutlineClose 
                  size={30}
                  className='close'
-                 color='#FFF'
+                 color='#210124'
                  onClick={closeCart}
                />
               </ButtonCloseCartBar> 

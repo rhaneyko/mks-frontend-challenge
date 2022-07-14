@@ -43,7 +43,7 @@ export const ButtonCloseCartBar = styled.button`
 
    margin-top: -45px;
 
-   background-color: black;
+   background-color: #FFF;
 
    cursor: pointer;
 `;
