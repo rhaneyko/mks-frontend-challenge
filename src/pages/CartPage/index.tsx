@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import CartItem from './CartItem';
 
 import {
@@ -13,6 +13,7 @@ import {
 
 import { AiOutlineClose } from 'react-icons/ai'
 import { ItemAtCart } from '../../App';
+import { ShoppingCartContext } from '../../context/CartContext';
 
 
 type Props = {
@@ -22,6 +23,10 @@ type Props = {
 }
 
 const CartPage: React.FC<Props> = ({cartItems, removeFromCart, closeCart,}) => {
+  const [itemAmount, setItemAmount] = useState(0)
+  const [total, setTotal] = useState(0)
+
+  const { shoppingCart } = useContext(ShoppingCartContext)
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat('pt-BR', {
       style: 'currency',
@@ -31,8 +36,15 @@ const CartPage: React.FC<Props> = ({cartItems, removeFromCart, closeCart,}) => {
 
   const priceTotal = (cartItems: ItemAtCart[]) => {
     return cartItems.reduce((acc, item) => {
-      return acc + item.price * item.amount
+        return item.price * item.amount + acc
     }, 0)}
+
+  
+
+    useEffect(() => {
+      setItemAmount(shoppingCart.length)
+      setTotal(shoppingCart.reduce((acc, item) => (item.price * item.amount) + acc, 0))
+    }, [shoppingCart])
     
 
     return (
@@ -60,7 +72,9 @@ const CartPage: React.FC<Props> = ({cartItems, removeFromCart, closeCart,}) => {
               </ItemsCart>
               <TotalAmount>
                 <p>Total:</p>
-                <p>{formatPrice(priceTotal(cartItems))}</p>
+                <p>
+                  {formatPrice(priceTotal(cartItems))}
+                </p>
               </TotalAmount>
               <FinalizePurchase>
                 <p>Finalizar compra</p>

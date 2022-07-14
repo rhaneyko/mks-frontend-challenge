@@ -55,7 +55,7 @@ const Navbar: React.FC<Props> = ({cartItems, removeFromCart}) => {
    return(
         <Container
           className='header'>
-          <LogoLarge>MKS <LogoSmall>Sistemas</LogoSmall></LogoLarge>
+          <LogoLarge>Tooth <LogoSmall>Produtos</LogoSmall></LogoLarge>
             <CartContainer onClick={navToggle}>
               <img src={CartIcon} alt='cart'/>
               <AmountItemCart>{qtyItemsCart}</AmountItemCart>

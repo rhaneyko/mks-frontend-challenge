@@ -2,13 +2,13 @@
 export default {
     title: 'theme',
     colors:{
-        primary: '#F52BA',
+        primary: '#210124',
         secondary: '#FFFFFF',
-        background: '#FFFFFF',
-        headerBackground: '#0F52BA',
+        background: '#F0F0C9',
+        headerBackground: '#210124',
         cardBackground: '#FFFFFF',
         text: '#2C2C2C',
-        buttonBackground: '#0F52BA',
-        borderButton: '#0F52BA',
+        buttonBackground: '#210124',
+        borderButton: '#210124',
     }
 }

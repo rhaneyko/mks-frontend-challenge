@@ -49,7 +49,7 @@ import styled from 'styled-components';
       
     position: absolute;
     
-    background-color: #0F52BA;
+    background-color: #210124;
 
     transform: translateX(100%);
     transition: 0.5s;

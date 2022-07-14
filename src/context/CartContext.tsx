@@ -18,6 +18,8 @@ const defaultValue = {
 type shoppingCart = {
     id: number;
     item: ItemAtCart;
+    amount: number;
+    price: number;
 }
 
 interface ShoppingCartContextProps {
