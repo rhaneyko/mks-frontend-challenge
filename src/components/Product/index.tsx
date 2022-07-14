@@ -13,6 +13,7 @@ import {
 } from './styles'
 import shoppingBag from '../../assets/shopping-bag.png'
 import { ItemAtCart } from '../../App';
+import Skeleton from '../Skeleton';
 
 type Props = {
   addToCart: (clickedItem: ItemAtCart) => void;
@@ -27,13 +28,7 @@ const Product: React.FC<Props> = ({ addToCart}) => {
         .then(completeProductResponse => {
             setProductsMks(completeProductResponse.products)
         })
-      })
-
-        const priceItem = (price: number) => {
-            return new Intl.NumberFormat('pt-BR', {
-                style: 'currency',
-                currency: 'BRL',
-            }).format(price)}
+        })
 
         return (
           <Container className='grid-container'>
@@ -45,14 +40,12 @@ const Product: React.FC<Props> = ({ addToCart}) => {
                           <ProductTitle>{product.name}</ProductTitle>
                         </div>
                          <div style={{backgroundColor: '#373737', width: 80, height: 25, padding: 4, marginLeft: 10, borderRadius: 5}} >
-                           <ProductPrice>
-                              {priceItem(product.price)}
-                           </ProductPrice>
+                           <ProductPrice>R${product.price}</ProductPrice>
                          </div>
                        </ProductInfos>
                       <ProductDescription>{product.description}</ProductDescription>
-                    <BuyButton 
-                     onClick={() => addToCart(product)}>
+                    <BuyButton
+                    onClick={() => addToCart(product)}>
                         <img src={shoppingBag} alt='bag' />
                         <BuyButtonText>Comprar</BuyButtonText>
                     </BuyButton>
