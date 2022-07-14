@@ -13,7 +13,7 @@ import {
 } from './styles'
 import shoppingBag from '../../assets/shopping-bag.png'
 import { ItemAtCart } from '../../App';
-import Skeleton from '../Skeleton';
+//import Skeleton from '../Skeleton';
 
 type Props = {
   addToCart: (clickedItem: ItemAtCart) => void;
@@ -39,7 +39,7 @@ const Product: React.FC<Props> = ({ addToCart}) => {
                         <div style={{ padding: 4, borderRadius: 5}} >
                           <ProductTitle>{product.name}</ProductTitle>
                         </div>
-                         <div style={{backgroundColor: '#373737', width: 80, height: 25, padding: 4, marginLeft: 10, borderRadius: 5}} >
+                         <div style={{backgroundColor: '#210124', width: 80, height: 25, padding: 4, marginLeft: 10, borderRadius: 5}} >
                            <ProductPrice>R${product.price}</ProductPrice>
                          </div>
                        </ProductInfos>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import CartItem from './CartItem';
 
 import {
@@ -34,7 +34,6 @@ const CartPage: React.FC<Props> = ({cartItems, removeFromCart, closeCart}) => {
       return acc + item.price * item.amount
     }, 0)
   }
-
 
     return (
         <Container>

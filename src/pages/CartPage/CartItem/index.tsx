@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
 import {
     Container,
@@ -24,7 +24,6 @@ type Props = {
 
 const CartItem: React.FC<Props> = ({item, removeFromCart, }) => {
   const [itemAmount, setItemAmount] = useState(1)
-
   const [ total, setTotal ] = useState(0)
 
 
@@ -68,7 +67,7 @@ const CartItem: React.FC<Props> = ({item, removeFromCart, }) => {
             >+</PlusButton>
            </CartItemAmount>
            <CartItemPrice>
-              R$ {formatPrice(item.price * itemAmount)}
+              R$ {formatPrice(priceTotal([item]))}
            </CartItemPrice>
            <CloseCart
               onClick={() => removeFromCart(item.id)}>

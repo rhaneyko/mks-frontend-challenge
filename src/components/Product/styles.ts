@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
    display: grid;
-   grid: 300px / auto auto auto auto;
+   grid: 330px / auto auto auto auto;
    grid-gap: 23px;
 `;
 
@@ -14,8 +14,8 @@ export const ProductCard = styled.div`
     align-items: center;
     justify-content: space-between;
 
-    width: 220px;
-    height: 300px;
+    width: 250px;
+    height: 330px;
 
     border-radius: 8px;
 
@@ -42,7 +42,7 @@ export const ProductInfos = styled.div`
 `;
 
 export const ProductTitle = styled.p`
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 400;
 
     color: ${props => props.theme.colors.text};
@@ -55,11 +55,10 @@ export const ProductPrice = styled.p`
     border-radius: 5px;
 
     color: #fff;
-    background-color: #373737;
 `;
 
 export const ProductDescription = styled.p`
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 300;
     font-family: 'Montserrat', sans-serif;
 

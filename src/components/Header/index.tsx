@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {  
       Container,
       LogoLarge,
@@ -24,7 +24,7 @@ type Props = {
 const Navbar: React.FC<Props> = ({cartItems, removeFromCart}) => {
   const [ active, setActive ] = useState('nav_menu');
   const [ isLoading, setIsLoading ] = useState(true);
-  const width = useRef(window.innerWidth / 4).current;
+  //const width = useRef(window.innerWidth / 4).current;
 
   useEffect(() => {
     setTimeout(() => {
