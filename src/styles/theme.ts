@@ -4,7 +4,7 @@ export default {
     colors:{
         primary: '#210124',
         secondary: '#FFFFFF',
-        background: '#F0F0C9',
+        background: '#FFFFFF',
         headerBackground: '#210124',
         cardBackground: '#FFFFFF',
         text: '#2C2C2C',

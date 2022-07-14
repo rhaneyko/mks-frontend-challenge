@@ -23,8 +23,10 @@ type Props = {
 
 
 const CartItem: React.FC<Props> = ({item, removeFromCart, }) => {
-  const [itemAmount, setItemAmount] = useState(0)
-  const [price, setPrice] = useState(item.price)
+  const [itemAmount, setItemAmount] = useState(1)
+
+  const [ total, setTotal ] = useState(0)
+
 
    const formatPrice = (price: number) => {
      return new Intl.NumberFormat('pt-BR', {
@@ -52,7 +54,7 @@ const CartItem: React.FC<Props> = ({item, removeFromCart, }) => {
             <MinusButton
               onClick={() => {
                 setItemAmount((oldAmound) => oldAmound - 1)
-                setPrice((oldPrice) => oldPrice - item.price)
+                setTotal(total - item.price)
               }}
             >-</MinusButton>
             <ItemAmount>
@@ -61,12 +63,12 @@ const CartItem: React.FC<Props> = ({item, removeFromCart, }) => {
             <PlusButton
               onClick={() => {
                 setItemAmount((oldAmound) => oldAmound + 1)
-                setPrice((oldPrice) => oldPrice + item.price)
+                setTotal(total + item.price)
               }}
             >+</PlusButton>
            </CartItemAmount>
            <CartItemPrice>
-              R$ {formatPrice(priceTotal([item]))}
+              R$ {formatPrice(item.price * itemAmount)}
            </CartItemPrice>
            <CloseCart
               onClick={() => removeFromCart(item.id)}>

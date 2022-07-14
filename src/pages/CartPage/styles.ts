@@ -47,6 +47,8 @@ export const ButtonCloseCartBar = styled.button`
    margin-top: -45px;
 
    background-color: black;
+
+   cursor: pointer;
 `;
 
 export const ItemsCart = styled.div`
@@ -102,6 +104,8 @@ export const FinalizePurchase = styled.button`
     height: 97px;
 
     background-color: #000;
+
+    cursor: pointer;
 
     p{
         font-size: 28px;

@@ -66,7 +66,6 @@ export const ProductDescription = styled.p`
     color: ${props => props.theme.colors.text};
 
     padding: 5px;
-
 `;
 
 export const BuyButton = styled.button`
@@ -87,6 +86,8 @@ export const BuyButton = styled.button`
     border: none;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
+
+    cursor: pointer;
 `;
 
 export const BuyButtonText = styled.p`

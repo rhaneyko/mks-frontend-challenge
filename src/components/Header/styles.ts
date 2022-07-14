@@ -82,8 +82,8 @@ export const LogoSmall = styled.p`
   font-size: 20px;
   font-weight: 300;
 
-  margin-left: 105px;
-  margin-top: -30px;
+  margin-left: 110px;
+  margin-top: -27px;
 `;
 
 export const CartContainer = styled.div`
@@ -97,6 +97,8 @@ export const CartContainer = styled.div`
 
   border-radius: 8px;
   background-color: #FFF;
+
+  cursor: pointer;
 `;
 
 export const AmountItemCart = styled.p`
@@ -106,6 +108,7 @@ export const AmountItemCart = styled.p`
   font-weight: 700;
 
   margin: 10px;
+  
 `;
 
 export const CartBar = styled.div`
