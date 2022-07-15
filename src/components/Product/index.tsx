@@ -54,6 +54,4 @@ const Product: React.FC<Props> = ({ addToCart}) => {
         </Container>
     )
 }
-
 export default Product;
-

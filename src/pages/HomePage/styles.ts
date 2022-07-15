@@ -25,4 +25,10 @@ export const CardsContainer = styled.div`
     flex-direction: row;
 
     margin-top: 70px;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+
+        margin-top: 700px;
+    }
 `;

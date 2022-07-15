@@ -4,6 +4,10 @@ export const Container = styled.div`
    display: grid;
    grid: 330px / auto auto auto auto;
    grid-gap: 23px;
+
+   @media (max-width: 768px) {
+        grid: auto / auto auto;
+   }
 `;
 
 export const ProductCard = styled.div`
@@ -22,6 +26,11 @@ export const ProductCard = styled.div`
     box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.14);
 
     background-color: ${props => props.theme.colors.cardBackground};
+
+    @media (max-width: 768px) {
+        width: 200px;
+        height: 300px;
+    }
 `;
 
 export const ProductImage = styled.img`
@@ -46,6 +55,10 @@ export const ProductTitle = styled.p`
     font-weight: 400;
 
     color: ${props => props.theme.colors.text};
+
+    @media (max-width: 768px) {
+        font-size: 14px;
+    }
 `;
 
 export const ProductPrice = styled.p`
@@ -55,6 +68,10 @@ export const ProductPrice = styled.p`
     border-radius: 5px;
 
     color: #fff;
+
+    @media (max-width: 768px) {
+        font-size: 12px;
+    }
 `;
 
 export const ProductDescription = styled.p`
@@ -65,6 +82,10 @@ export const ProductDescription = styled.p`
     color: ${props => props.theme.colors.text};
 
     padding: 5px;
+
+    @media (max-width: 768px) {
+        font-size: 10px;    
+    }
 `;
 
 export const BuyButton = styled.button`
@@ -77,7 +98,7 @@ export const BuyButton = styled.button`
     height: 32px;
 
     font-size: 16px;
-    text-transform: uppercase;
+    text-transform: uppercase; 
     color: #FFF;
 
     background-color: ${props => props.theme.colors.buttonBackground};
@@ -97,4 +118,8 @@ export const BuyButtonText = styled.p`
     color: #FFF;
     
     margin: 1px 0 0 14px;
+
+    @media (max-width: 768px) {
+        font-size: 14px;
+    }
 `;

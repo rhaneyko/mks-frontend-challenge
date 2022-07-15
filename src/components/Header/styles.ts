@@ -23,6 +23,7 @@ import styled from 'styled-components';
 
     @media (max-width: 768px) {
       padding-left: 10px;
+      padding-right: 10px;
     }
 
 .nav_menu {
