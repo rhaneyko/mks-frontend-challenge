@@ -37,7 +37,7 @@ export const ButtonCloseBagBar = styled.button`
    justify-content: center;
 
    width: 50px;
-   height: 38px;
+   height: 40px;
 
    border-radius: 50%;
 
