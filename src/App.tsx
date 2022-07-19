@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
-import { ThemeProvider } from 'styled-components';
+import { ThemeProvider } from "styled-components";
 
-import Header from './components/Header';
-import HomePage from './pages/HomePage';
+import Header from "./components/Header";
+import HomePage from "./pages/HomePage";
 
-import Skeleton from './components/Skeleton';
+import Skeleton from "./components/Skeleton";
 
-import GlobalStyles from './styles/GlobalStyles';
-import theme from './styles/theme';
+import GlobalStyles from "./styles/GlobalStyles";
+import theme from "./styles/theme";
 
-export type ItemAtCart = {
+export type ItemAtBag = {
   id: number;
   photo: string;
   name: string;
@@ -18,26 +18,26 @@ export type ItemAtCart = {
   price: number;
   amount: number;
   quantity: number;
-}
+};
 
- type Props = {
-  cartItems: ItemAtCart[];
-  closeCart: () => void;
-  addToCart: (clickedItem: ItemAtCart) => void;
- }
+type Props = {
+  bagItems: ItemAtBag[];
+  closeBag: () => void;
+  addToBag: (clickedItem: ItemAtBag) => void;
+};
 
-const App: React.FC<Props> = ({closeCart}) => {
+const App: React.FC<Props> = ({ closeBag }) => {
   const [isLoading, setIsLoading] = useState(true);
   //const width = useRef(window.innerWidth / 4).current;
 
-  const [ cartItems, setCartItems ] = useState([] as ItemAtCart[]);
+  const [bagItems, setBagItems] = useState([] as ItemAtBag[]);
 
-  const addItemToCart = (clickedItem: ItemAtCart) => {
-    setCartItems(prev => {
-      const isItemInCart = prev.find(item => item.id === clickedItem.id);
+  const addItemToCart = (clickedItem: ItemAtBag) => {
+    setBagItems((prev) => {
+      const isItemInCart = prev.find((item) => item.id === clickedItem.id);
 
       if (isItemInCart) {
-        return prev.map(item =>
+        return prev.map((item) =>
           item.id === clickedItem.id
             ? { ...item, amount: item.quantity + 1 }
             : item
@@ -45,13 +45,13 @@ const App: React.FC<Props> = ({closeCart}) => {
       }
       return [...prev, { ...clickedItem, amount: 1 }];
     });
-  }; 
+  };
 
-  const removeItemFromCart = (id: number) => {
-    setCartItems(prev => {
-      return prev.filter(item => item.id !== id);
+  const removeItemFromBag = (id: number) => {
+    setBagItems((prev) => {
+      return prev.filter((item) => item.id !== id);
     });
-  }
+  };
 
   useEffect(() => {
     setTimeout(() => {
@@ -61,34 +61,31 @@ const App: React.FC<Props> = ({closeCart}) => {
 
   if (isLoading) {
     return (
-    <div className='App'>
-      <div className='header'>
-        <Skeleton width={200} height={40} />
-        <Skeleton width={90} height={20} borderRadius={20}/>
+      <div className="App">
+        <div className="header">
+          <Skeleton width={200} height={40} />
+          <Skeleton width={90} height={20} borderRadius={20} />
+        </div>
+        <div className="content">
+          {[0, 1, 2, 3, 4, 5, 6, 7].map((product) => (
+            <Skeleton key={product} width={200} height={200} />
+          ))}
+        </div>
       </div>
-     <div className='content'>
-      {[0, 1, 2, 3, 4, 5, 6, 7].map(product => (
-        <Skeleton key={product} width={200} height={200} />
-      ))}
-      </div>
-    </div>
-    )
+    );
   }
   return (
-
     <ThemeProvider theme={theme}>
       <Header
-        cartItems={cartItems}
-        removeFromCart={removeItemFromCart}
-        closeCart={closeCart}
+        bagItems={bagItems}
+        removeItemFromBag={removeItemFromBag}
+        closeBag={closeBag}
       ></Header>
-      <HomePage 
-        addToCart={addItemToCart}
-      />
-      
-      <GlobalStyles/>
+      <HomePage addToBag={addItemToCart} />
+
+      <GlobalStyles />
     </ThemeProvider>
   );
-}
+};
 
 export default App;

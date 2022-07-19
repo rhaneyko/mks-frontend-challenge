@@ -10,7 +10,7 @@ export const Container = styled.div`
     height: 100%;
 `;
 
-export const HeaderCartBar = styled.header`
+export const HeaderBagBar = styled.header`
     display: flex;
     flex-direction: row;
 
@@ -20,7 +20,7 @@ export const HeaderCartBar = styled.header`
     padding: 36px 22px 0 22px;
 `;
 
-export const CartBarTitle = styled.p`
+export const BagBarTitle = styled.p`
     font-size: 27px;
     font-weight: 700;
     font-family: 'Montserrat', sans-serif;
@@ -31,7 +31,7 @@ export const CartBarTitle = styled.p`
     margin-bottom: 20px;
 `;
 
-export const ButtonCloseCartBar = styled.button`
+export const ButtonCloseBagBar = styled.button`
    display: flex;
    align-items: center;
    justify-content: center;
@@ -48,7 +48,7 @@ export const ButtonCloseCartBar = styled.button`
    cursor: pointer;
 `;
 
-export const ItemsCart = styled.div`
+export const ItemsBag = styled.div`
     display: flex;
     flex-direction: column;
 

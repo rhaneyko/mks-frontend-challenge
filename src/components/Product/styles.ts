@@ -42,7 +42,7 @@ export const ProductImage = styled.img`
 
 export const ProductInfos = styled.div`
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
 
     width: 100%;
@@ -88,38 +88,23 @@ export const ProductDescription = styled.p`
     }
 `;
 
-export const BuyButton = styled.button`
+export const AddBagButton = styled.button`
     display: flex;
 
     align-items: center;
     justify-content: center; 
 
-    width: 100%;
-    height: 32px;
+    width: 40px;
+    height: 40px;
 
-    font-size: 16px;
-    text-transform: uppercase; 
+    border: none;
+    border-radius: 50%;
+
+    margin-top: -90px;
+    margin-right: -180px;
+    
     color: #FFF;
-
     background-color: ${props => props.theme.colors.buttonBackground};
     
-    border: none;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
-
     cursor: pointer;
-`;
-
-export const BuyButtonText = styled.p`
-    font-size: 16px;
-    font-weight: 600;
-    font-family: 'Montserrat', sans-serif;
-
-    color: #FFF;
-    
-    margin: 1px 0 0 14px;
-
-    @media (max-width: 768px) {
-        font-size: 14px;
-    }
 `;

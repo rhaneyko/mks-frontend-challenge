@@ -1,38 +1,38 @@
-import { createContext, useContext } from 'react'
-import { ItemAtCart } from '../App';
+import { createContext, useContext } from "react";
+import { ItemAtBag } from "../App";
 
-export type CartItems = {
-    id: number,
-    name: string,
-    price: number,
-    image: string,
-    quantity: number
-}
+export type BagItems = {
+  id: number;
+  name: string;
+  price: number;
+  image: string;
+  quantity: number;
+};
 
 const defaultValue = {
-    shoppingCart: [],
-    addItemIn: () => {},
-    subtractItemIn: () => {},
+  shoppingBag: [],
+  addItemIn: () => {},
+  subtractItemIn: () => {},
+};
+
+type shoppingBag = {
+  id: number;
+  item: ItemAtBag;
+  amount: number;
+  price: number;
+};
+
+interface shoppingBagContextProps {
+  shoppingBag: shoppingBag[];
+  addItemIn: (item: ItemAtBag) => void;
+  subtractItemIn: (item: ItemAtBag) => void;
 }
 
-type shoppingCart = {
-    id: number;
-    item: ItemAtCart;
-    amount: number;
-    price: number;
+export const shoppingBagContext =
+  createContext<shoppingBagContextProps>(defaultValue);
+
+const CartContext = createContext<shoppingBag>({} as shoppingBag);
+
+export function useCart() {
+  return useContext(CartContext);
 }
-
-interface ShoppingCartContextProps {
-    shoppingCart: shoppingCart[];
-    addItemIn: (item: ItemAtCart) => void;
-    subtractItemIn: (item: ItemAtCart) => void;
-}
-
-export const ShoppingCartContext = createContext<ShoppingCartContextProps>(defaultValue)
-
-const CartContext = createContext<shoppingCart>({} as shoppingCart)
-
-export function useCart(){
-    return useContext(CartContext)
-}
-

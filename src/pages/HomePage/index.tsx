@@ -1,26 +1,20 @@
-import React from 'react'
-import { ItemAtCart } from '../../App';
-import ProductPage from '../../components/Product';
-import {
-    Container,
-    CardsContainer,
-} from './styles'
+import React from "react";
+import { ItemAtBag } from "../../App";
+import ProductPage from "../../components/Product";
+import { Container, CardsContainer } from "./styles";
 
 type Props = {
-    addToCart: (clickedItem: ItemAtCart) => void;
-}
+  addToBag: (clickedItem: ItemAtBag) => void;
+};
 
-const HomePage: React.FC<Props> = ({addToCart}) => {
-
-    return (
-        <Container>
-            <CardsContainer>
-                 <ProductPage
-                    
-                    addToCart={addToCart}/>
-            </CardsContainer>
-        </Container>
-    )
-}
+const HomePage: React.FC<Props> = ({ addToBag }) => {
+  return (
+    <Container>
+      <CardsContainer>
+        <ProductPage addToBag={addToBag} />
+      </CardsContainer>
+    </Container>
+  );
+};
 
 export default HomePage;

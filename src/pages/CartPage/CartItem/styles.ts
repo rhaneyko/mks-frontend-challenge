@@ -20,13 +20,13 @@ export const Item = styled.div`
     background-color: #FFF;
 `;
 
-export const CartItemImage = styled.img`
+export const BagItemImage = styled.img`
     display: flex;
     width: 70px;
     height: 70px;
 `;
 
-export const CartItemName = styled.p`
+export const BagItemName = styled.p`
     width: 113px;
     font-family: 'Montserrat', sans-serif;
     font-size: 13px;
@@ -35,7 +35,7 @@ export const CartItemName = styled.p`
     color: #2C2C2C;
 `;
 
-export const CartItemAmount = styled.div`
+export const BagItemAmount = styled.div`
     display: flex;  
     flex-direction: row;
     align-items: center;
@@ -119,4 +119,6 @@ export const CloseCart = styled.button`
     margin-top: -88px;
 
     background-color: black;
+    
+    cursor: pointer;
 `;

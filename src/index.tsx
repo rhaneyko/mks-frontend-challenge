@@ -1,17 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
 
 ReactDOM.render(
-    <React.StrictMode>
-      <App 
-      cartItems={[]}
-      closeCart={() => {}}
-      addToCart={() => {}}
-     
-      />
-
-    </React.StrictMode>,
-    document.getElementById('root')
-  );
+  <React.StrictMode>
+    <App bagItems={[]} closeBag={() => {}} addToBag={() => {}} />
+  </React.StrictMode>,
+  document.getElementById("root")
+);

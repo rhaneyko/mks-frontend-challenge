@@ -1,29 +1,27 @@
-import React, { useEffect, useState } from 'react';
-import {  
-      Container,
-      LogoLarge,
-      LogoSmall,
-      CartContainer,
-        AmountItemCart,
-        CartBar,
-     } from './styles'
-import CartPage from '../../pages/CartPage';
+import React, { useEffect, useState } from "react";
+import {
+  Container,
+  LogoLarge,
+  LogoSmall,
+  CartContainer,
+  AmountItemCart,
+  CartBar,
+} from "./styles";
+import CartPage from "../../pages/CartPage";
 
-
-import CartIcon from '../../assets/Vector.png'
-
-import { ItemAtCart } from '../../App';
-import Skeleton from '../Skeleton';
+import { ItemAtBag } from "../../App";
+import Skeleton from "../Skeleton";
+import { AiOutlineShopping } from "react-icons/ai";
 
 type Props = {
-  cartItems: ItemAtCart[];
-  removeFromCart: (id: number) => void;
-  closeCart: () => void;
-}
+  bagItems: ItemAtBag[];
+  removeItemFromBag: (id: number) => void;
+  closeBag: () => void;
+};
 
-const Navbar: React.FC<Props> = ({cartItems, removeFromCart}) => {
-  const [ active, setActive ] = useState('nav_menu');
-  const [ isLoading, setIsLoading ] = useState(true);
+const Navbar: React.FC<Props> = ({ bagItems, removeItemFromBag }) => {
+  const [active, setActive] = useState("nav_menu");
+  const [isLoading, setIsLoading] = useState(true);
   //const width = useRef(window.innerWidth / 4).current;
 
   useEffect(() => {
@@ -31,45 +29,46 @@ const Navbar: React.FC<Props> = ({cartItems, removeFromCart}) => {
       setIsLoading(false);
     }, 2000);
   }, []);
-  if(isLoading) {
+  if (isLoading) {
     return (
-      <Container className='header'>
-          <Skeleton width={100} height={100} />
-          <Skeleton width={100} height={100} />
-          <Skeleton width={100} height={100} />
+      <Container className="header">
+        <Skeleton width={100} height={100} />
+        <Skeleton width={100} height={100} />
+        <Skeleton width={100} height={100} />
       </Container>
-    )}
+    );
+  }
 
   const navToggle = () => {
-    if (active === 'nav_menu') {
-      setActive('nav_menu nav_active')
+    if (active === "nav_menu") {
+      setActive("nav_menu nav_active");
     }
-  }
+  };
 
-  const closeCartBar = () => {
-    setActive('nav_menu')
-  }
+  const closeBagBar = () => {
+    setActive("nav_menu");
+  };
 
-  const qtyItemsCart = cartItems.length;
+  const qtyItemsCart = bagItems.length;
 
-   return(
-        <Container
-          className='header'>
-          <LogoLarge>Tooth <LogoSmall>Produtos</LogoSmall></LogoLarge>
-            <CartContainer onClick={navToggle}>
-              <img src={CartIcon} alt='cart'/>
-              <AmountItemCart>{qtyItemsCart}</AmountItemCart>
-            </CartContainer>
-            <CartBar 
-            className={active}> 
-              <CartPage 
-               cartItems={cartItems}
-               removeFromCart={removeFromCart}
-               closeCart={closeCartBar}
-              />
-            </CartBar>
-        </Container>
-    )
- }
+  return (
+    <Container className="header">
+      <LogoLarge>
+        Tooth <LogoSmall>Produtos</LogoSmall>
+      </LogoLarge>
+      <CartContainer onClick={navToggle}>
+        <AiOutlineShopping size={25} />
+        <AmountItemCart>{qtyItemsCart}</AmountItemCart>
+      </CartContainer>
+      <CartBar className={active}>
+        <CartPage
+          bagItems={bagItems}
+          removeItemFromBag={removeItemFromBag}
+          closeBag={closeBagBar}
+        />
+      </CartBar>
+    </Container>
+  );
+};
 
- export default Navbar;
+export default Navbar;
