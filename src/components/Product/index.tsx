@@ -14,6 +14,7 @@ import {
 import { ItemAtBag } from "../../App";
 
 import { AiOutlineShopping } from "react-icons/ai";
+
 //import Skeleton from '../Skeleton';
 
 type Props = {

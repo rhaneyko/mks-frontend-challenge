@@ -52,7 +52,7 @@ const BagPage: React.FC<Props> = ({
         </ButtonCloseBagBar>
       </HeaderBagBar>
       <ItemsBag>
-        {bagItems.length === 0 ? <p>Nenhum item no carrinho</p> : null}
+        {bagItems.length === 0 ? <p>Nenhum item na sacola</p> : null}
         {bagItems.map((item) => (
           <BagItem
             key={item.id}
