@@ -4,7 +4,6 @@ import {
   Container,
   ProductCard,
   ProductImage,
-  ProductInfos,
   ProductTitle,
   ProductPrice,
   ProductDescription,
@@ -34,28 +33,20 @@ const Product: React.FC<Props> = ({ addToBag }) => {
       });
   });
 
+  const formatPrice = (price: number) => {
+    return new Intl.NumberFormat("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    }).format(price);
+  };
+
   return (
     <Container className="grid-container">
       {productsMks.map((product) => (
         <ProductCard key={product.id}>
           <ProductImage src={product.photo} alt={product.name} />
-          <ProductInfos>
-            <div style={{ padding: 4, borderRadius: 5 }}>
-              <ProductTitle>{product.name}</ProductTitle>
-            </div>
-            <div
-              style={{
-                backgroundColor: "#210124",
-                width: 80,
-                height: 25,
-                padding: 4,
-                marginLeft: 10,
-                borderRadius: 5,
-              }}
-            >
-              <ProductPrice>R${product.price}</ProductPrice>
-            </div>
-          </ProductInfos>
+          <ProductTitle>{product.name}</ProductTitle>
+          <ProductPrice>{formatPrice(product.price)}</ProductPrice>
           <AddBagButton onClick={() => addToBag(product)}>
             <AiOutlineShopping size={30} />
           </AddBagButton>

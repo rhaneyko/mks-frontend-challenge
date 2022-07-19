@@ -16,7 +16,7 @@ export const ProductCard = styled.div`
 
     
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 
     width: 250px;
     height: 330px;
@@ -40,20 +40,10 @@ export const ProductImage = styled.img`
     margin: 5px 0 10px 0;
 `;
 
-export const ProductInfos = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    width: 100%;
-
-    padding: 10px;
-`;
-
 export const ProductTitle = styled.p`
     font-size: 17px;
     font-weight: 400;
-
+    
     color: ${props => props.theme.colors.text};
 
     @media (max-width: 768px) {
@@ -62,12 +52,13 @@ export const ProductTitle = styled.p`
 `;
 
 export const ProductPrice = styled.p`
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 700;
 
+    padding: 5px;
     border-radius: 5px;
 
-    color: #fff;
+    color: #210124;
 
     @media (max-width: 768px) {
         font-size: 12px;
@@ -99,9 +90,6 @@ export const AddBagButton = styled.button`
 
     border: none;
     border-radius: 50%;
-
-    margin-top: -90px;
-    margin-right: -180px;
     
     color: #FFF;
     background-color: ${props => props.theme.colors.buttonBackground};
