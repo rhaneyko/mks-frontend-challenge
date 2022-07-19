@@ -21,7 +21,7 @@ type Props = {
   removeItemFromBag: (id: number) => void;
 };
 
-const CartItem: React.FC<Props> = ({ item, removeItemFromBag }) => {
+const BagItem: React.FC<Props> = ({ item, removeItemFromBag }) => {
   const [itemAmount, setItemAmount] = useState(1);
   const [total, setTotal] = useState(0);
 
@@ -71,4 +71,4 @@ const CartItem: React.FC<Props> = ({ item, removeItemFromBag }) => {
   );
 };
 
-export default CartItem;
+export default BagItem;

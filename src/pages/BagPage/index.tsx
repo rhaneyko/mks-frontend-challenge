@@ -1,5 +1,5 @@
 import React from "react";
-import CartItem from "./CartItem";
+import BagItem from "./BagItem";
 
 import {
   Container,
@@ -20,7 +20,7 @@ type Props = {
   closeBag: () => void;
 };
 
-const CartPage: React.FC<Props> = ({
+const BagPage: React.FC<Props> = ({
   bagItems,
   removeItemFromBag,
   closeBag,
@@ -54,7 +54,7 @@ const CartPage: React.FC<Props> = ({
       <ItemsBag>
         {bagItems.length === 0 ? <p>Nenhum item no carrinho</p> : null}
         {bagItems.map((item) => (
-          <CartItem
+          <BagItem
             key={item.id}
             item={item}
             removeItemFromBag={removeItemFromBag}
@@ -71,4 +71,4 @@ const CartPage: React.FC<Props> = ({
     </Container>
   );
 };
-export default CartPage;
+export default BagPage;

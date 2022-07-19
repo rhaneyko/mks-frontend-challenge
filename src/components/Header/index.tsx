@@ -3,11 +3,11 @@ import {
   Container,
   LogoLarge,
   LogoSmall,
-  CartContainer,
-  AmountItemCart,
-  CartBar,
+  BagContainer,
+  AmountItemBag,
+  BagBar,
 } from "./styles";
-import CartPage from "../../pages/CartPage";
+import BagPage from "../../pages/BagPage";
 
 import { ItemAtBag } from "../../App";
 import Skeleton from "../Skeleton";
@@ -49,24 +49,24 @@ const Navbar: React.FC<Props> = ({ bagItems, removeItemFromBag }) => {
     setActive("nav_menu");
   };
 
-  const qtyItemsCart = bagItems.length;
+  const qtyItemsBag = bagItems.length;
 
   return (
     <Container className="header">
       <LogoLarge>
         Tooth <LogoSmall>Produtos</LogoSmall>
       </LogoLarge>
-      <CartContainer onClick={navToggle}>
+      <BagContainer onClick={navToggle}>
         <AiOutlineShopping size={25} />
-        <AmountItemCart>{qtyItemsCart}</AmountItemCart>
-      </CartContainer>
-      <CartBar className={active}>
-        <CartPage
+        <AmountItemBag>{qtyItemsBag}</AmountItemBag>
+      </BagContainer>
+      <BagBar className={active}>
+        <BagPage
           bagItems={bagItems}
           removeItemFromBag={removeItemFromBag}
           closeBag={closeBagBar}
         />
-      </CartBar>
+      </BagBar>
     </Container>
   );
 };

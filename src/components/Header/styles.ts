@@ -87,7 +87,7 @@ export const LogoSmall = styled.p`
   margin-top: -27px;
 `;
 
-export const CartContainer = styled.div`
+export const BagContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -102,7 +102,7 @@ export const CartContainer = styled.div`
   cursor: pointer;
 `;
 
-export const AmountItemCart = styled.p`
+export const AmountItemBag = styled.p`
   color: #000;
   font-family: 'Montserrat', sans-serif;
   font-size: 18px;
@@ -112,7 +112,7 @@ export const AmountItemCart = styled.p`
   
 `;
 
-export const CartBar = styled.div`
+export const BagBar = styled.div`
   display: flex;
   flex-direction: column;
 
