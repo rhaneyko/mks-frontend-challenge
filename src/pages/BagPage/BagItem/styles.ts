@@ -98,14 +98,14 @@ export const ItemAmount = styled.p`
     border-right: 0.2px solid #BFBFBF;
 
 `;
-export const CartItemPrice = styled.p`
+export const BagItemPrice = styled.p`
     font-size: 14px;
     font-weight: 700;
     font-family: 'Montserrat', sans-serif;
     color: rgba(0, 0, 0, 1);
 `;
 
-export const CloseCart = styled.button`
+export const CloseBag = styled.button`
     display: flex;
     align-items: center;
     justify-content: center;

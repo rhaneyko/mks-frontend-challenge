@@ -7,11 +7,11 @@ import {
   AmountItemBag,
   BagBar,
 } from "./styles";
-import BagPage from "../../pages/BagPage";
 
 import { ItemAtBag } from "../../App";
 import Skeleton from "../Skeleton";
 import { AiOutlineShopping } from "react-icons/ai";
+import BagPage from "../../pages/BagPage";
 
 type Props = {
   bagItems: ItemAtBag[];

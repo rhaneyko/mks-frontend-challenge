@@ -9,8 +9,8 @@ import {
   MinusButton,
   PlusButton,
   ItemAmount,
-  CartItemPrice,
-  CloseCart,
+  BagItemPrice,
+  CloseBag,
 } from "./styles";
 
 import { AiOutlineClose } from "react-icons/ai";
@@ -32,8 +32,8 @@ const BagItem: React.FC<Props> = ({ item, removeItemFromBag }) => {
     }).format(price);
   };
 
-  const priceTotal = (cartItems: ItemAtBag[]) => {
-    return cartItems.reduce((acc, item) => {
+  const priceTotal = (bagItems: ItemAtBag[]) => {
+    return bagItems.reduce((acc, item) => {
       return item.price * item.amount + acc;
     }, 0);
   };
@@ -62,10 +62,10 @@ const BagItem: React.FC<Props> = ({ item, removeItemFromBag }) => {
             +
           </PlusButton>
         </BagItemAmount>
-        <CartItemPrice>R$ {formatPrice(priceTotal([item]))}</CartItemPrice>
-        <CloseCart onClick={() => removeItemFromBag(item.id)}>
+        <BagItemPrice>R$ {formatPrice(priceTotal([item]))}</BagItemPrice>
+        <CloseBag onClick={() => removeItemFromBag(item.id)}>
           <AiOutlineClose size={20} color="#FFF" />
-        </CloseCart>
+        </CloseBag>
       </Item>
     </Container>
   );
