@@ -80,7 +80,8 @@ const App: React.FC<Props> = ({ closeBag }) => {
         bagItems={bagItems}
         removeItemFromBag={removeItemFromBag}
         closeBag={closeBag}
-      ></Header>
+      />
+
       <HomePage addToBag={addItemToCart} />
 
       <GlobalStyles />
