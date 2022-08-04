@@ -1,5 +1,5 @@
-import React from "react";
-import BagItem from "./BagItem";
+import React from 'react';
+import BagItem from './BagItem';
 
 import {
   Container,
@@ -9,10 +9,10 @@ import {
   ItemsBag,
   TotalAmount,
   FinalizePurchase,
-} from "./styles";
+} from './styles';
 
-import { AiOutlineClose } from "react-icons/ai";
-import { ItemAtBag } from "../../App";
+import { AiOutlineClose } from 'react-icons/ai';
+import { ItemAtBag } from '../../App';
 
 type Props = {
   bagItems: ItemAtBag[];
@@ -26,9 +26,9 @@ const BagPage: React.FC<Props> = ({
   closeBag,
 }) => {
   const formatPrice = (price: number) => {
-    return new Intl.NumberFormat("pt-BR", {
-      style: "currency",
-      currency: "BRL",
+    return new Intl.NumberFormat('pt-BR', {
+      style: 'currency',
+      currency: 'BRL',
     }).format(price);
   };
 
@@ -45,8 +45,8 @@ const BagPage: React.FC<Props> = ({
         <ButtonCloseBagBar>
           <AiOutlineClose
             size={30}
-            className="close"
-            color="#210124"
+            className='close'
+            color='#210124'
             onClick={closeBag}
           />
         </ButtonCloseBagBar>
@@ -71,4 +71,6 @@ const BagPage: React.FC<Props> = ({
     </Container>
   );
 };
+
+
 export default BagPage;

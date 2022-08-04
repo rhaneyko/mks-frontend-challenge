@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
-import { ThemeProvider } from "styled-components";
+import { ThemeProvider } from 'styled-components';
 
-import Header from "./components/Header";
-import HomePage from "./pages/HomePage";
+import Header from './components/Header';
+import HomePage from './pages/HomePage';
 
-import Skeleton from "./components/Skeleton";
+import Skeleton from './components/Skeleton';
 
-import GlobalStyles from "./styles/GlobalStyles";
-import theme from "./styles/theme";
+import GlobalStyles from './styles/GlobalStyles';
+import theme from './styles/theme';
 
 export type ItemAtBag = {
   id: number;
@@ -61,12 +61,12 @@ const App: React.FC<Props> = ({ closeBag }) => {
 
   if (isLoading) {
     return (
-      <div className="App">
-        <div className="header">
+      <div className='App'>
+        <div className='header'>
           <Skeleton width={200} height={40} />
           <Skeleton width={90} height={20} borderRadius={20} />
         </div>
-        <div className="content">
+        <div className='content'>
           {[0, 1, 2, 3, 4, 5, 6, 7].map((product) => (
             <Skeleton key={product} width={200} height={200} />
           ))}
