@@ -5,7 +5,7 @@ export default {
         primary: '#210124',
         secondary: '#FFFFFF',
         background: '#FFFFFF',
-        headerBackground: '#210124',
+        headerBackground: '#0F52BA',
         cardBackground: '#FFFFFF',
         text: '#210124',
         buttonBackground: '#210124',

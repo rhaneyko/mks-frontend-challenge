@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
 import {
   Container,
@@ -8,11 +8,11 @@ import {
   ProductPrice,
   ProductDescription,
   AddBagButton,
-} from "./styles";
+} from './styles';
 
-import { ItemAtBag } from "../../App";
+import { ItemAtBag } from '../../App';
 
-import { AiOutlineShopping } from "react-icons/ai";
+import { AiOutlineShopping } from 'react-icons/ai';
 //import Skeleton from '../Skeleton';
 
 type Props = {
@@ -24,7 +24,7 @@ const Product: React.FC<Props> = ({ addToBag }) => {
 
   useEffect(function () {
     fetch(
-      "https://mks-frontend-challenge-api.herokuapp.com/api/v1/products?page=1&rows=10&sortBy=id&orderBy=DESC"
+      'https://mks-frontend-challenge-api.herokuapp.com/api/v1/products?page=1&rows=10&sortBy=id&orderBy=DESC'
     )
       .then((productResponse) => productResponse.json())
       .then((completeProductResponse) => {
@@ -33,14 +33,14 @@ const Product: React.FC<Props> = ({ addToBag }) => {
   });
 
   const formatPrice = (price: number) => {
-    return new Intl.NumberFormat("pt-BR", {
-      style: "currency",
-      currency: "BRL",
+    return new Intl.NumberFormat('pt-BR', {
+      style: 'currency',
+      currency: 'BRL',
     }).format(price);
   };
 
   return (
-    <Container className="grid-container">
+    <Container className='grid-container'>
       {productsMks.map((product) => (
         <ProductCard key={product.id}>
           <ProductImage src={product.photo} alt={product.name} />
