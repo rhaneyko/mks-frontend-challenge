@@ -32,11 +32,14 @@ const BagItem: React.FC<Props> = ({ item, removeItemFromBag }) => {
     }).format(price);
   };
 
-  const priceTotal = (bagItems: ItemAtBag[]) => {
+  
+
+  const itemQty = (bagItems: ItemAtBag[]) => {
     return bagItems.reduce((acc, item) => {
-      return item.price * item.amount + acc;
-    }, 0);
+      return item.amount + acc;
+    } ,0);
   };
+  
 
   return (
     <Container>
@@ -62,7 +65,7 @@ const BagItem: React.FC<Props> = ({ item, removeItemFromBag }) => {
             +
           </PlusButton>
         </BagItemAmount>
-        <BagItemPrice>R$ {formatPrice(priceTotal([item]))}</BagItemPrice>
+        <BagItemPrice>R$ {item.price}</BagItemPrice>
         <CloseBag onClick={() => removeItemFromBag(item.id)}>
           <AiOutlineClose size={20} color="#FFF" />
         </CloseBag>
