@@ -41,7 +41,8 @@ const Product: React.FC<Props> = ({ addToBag }) => {
 
   return (
     <Container className='grid-container'>
-      {productsMks.map((product) => (
+      { productsMks &&
+      productsMks.map((product) => (
         <ProductCard key={product.id}>
           <ProductImage src={product.photo} alt={product.name} />
           <ProductTitle>{product.name}</ProductTitle>

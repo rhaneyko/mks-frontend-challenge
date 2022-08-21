@@ -95,22 +95,19 @@ export const FinalizePurchase = styled.button`
     align-items: center;
     justify-content: center;
 
-    width: 50%;
-    height: 50px;
+    width: 100%;
+    height: 97px;
 
-    margin-bottom: 10px;
 
-    border-radius: 50px;
-
-    background-color: #FFF;
+    background-color: #000;
 
     cursor: pointer;
 
     p{
-        font-size: 20px;
+        font-size: 27px;
         font-weight: 700;
         font-family: 'Montserrat', sans-serif;
 
-        color: #210124;
+        color: #FFF;
     }
 `;

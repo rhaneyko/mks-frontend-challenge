@@ -27,8 +27,7 @@ type Props = {
 };
 
 const App: React.FC<Props> = ({ closeBag }) => {
-  const [isLoading, setIsLoading] = useState(true);
-  //const width = useRef(window.innerWidth / 4).current;
+  
 
   const [bagItems, setBagItems] = useState([] as ItemAtBag[]);
 
@@ -53,27 +52,27 @@ const App: React.FC<Props> = ({ closeBag }) => {
     });
   };
 
-  useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 2000);
-  }, []);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setIsLoading(false);
+  //   }, 2000);
+  // }, []);
 
-  if (isLoading) {
-    return (
-      <div className='App'>
-        <div className='header'>
-          <Skeleton width={200} height={40} />
-          <Skeleton width={90} height={20} borderRadius={20} />
-        </div>
-        <div className='content'>
-          {[0, 1, 2, 3, 4, 5, 6, 7].map((product) => (
-            <Skeleton key={product} width={200} height={200} />
-          ))}
-        </div>
-      </div>
-    );
-  }
+  // if (isLoading) {
+  //   return (
+  //     <div className='App'>
+  //       <div className='header'>
+  //         <Skeleton width={200} height={40} />
+  //         <Skeleton width={90} height={20} borderRadius={20} />
+  //       </div>
+  //       <div className='content'>
+  //         {[0, 1, 2, 3, 4, 5, 6, 7].map((product) => (
+  //           <Skeleton key={product} width={200} height={200} />
+  //         ))}
+  //       </div>
+  //     </div>
+  //   );
+  // }
   return (
     <ThemeProvider theme={theme}>
       <Header

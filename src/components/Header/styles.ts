@@ -50,7 +50,7 @@ import styled from 'styled-components';
       
     position: absolute;
     
-    background-color: #210124;
+    background-color: #0F52BA;
 
     transform: translateX(100%);
     transition: 0.5s;
