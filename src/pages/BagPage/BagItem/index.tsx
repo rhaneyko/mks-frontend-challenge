@@ -65,7 +65,9 @@ const BagItem: React.FC<Props> = ({ item, removeItemFromBag }) => {
             +
           </PlusButton>
         </BagItemAmount>
-        <BagItemPrice>R$ {item.price}</BagItemPrice>
+        <BagItemPrice>R$
+          
+        </BagItemPrice>
         <CloseBag onClick={() => removeItemFromBag(item.id)}>
           <AiOutlineClose size={20} color="#FFF" />
         </CloseBag>

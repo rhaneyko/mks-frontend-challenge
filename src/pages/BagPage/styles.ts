@@ -43,7 +43,7 @@ export const ButtonCloseBagBar = styled.button`
 
    margin-top: -45px;
 
-   background-color: #FFF;
+   background-color: #000;
 
    cursor: pointer;
 `;

@@ -8,6 +8,7 @@ import {
   ProductPrice,
   ProductDescription,
   AddBagButton,
+  ButtonText,
 } from './styles';
 
 import { ItemAtBag } from '../../App';
@@ -47,10 +48,12 @@ const Product: React.FC<Props> = ({ addToBag }) => {
           <ProductImage src={product.photo} alt={product.name} />
           <ProductTitle>{product.name}</ProductTitle>
           <ProductPrice>{formatPrice(product.price)}</ProductPrice>
+          <ProductDescription>{product.description}</ProductDescription>
+
           <AddBagButton onClick={() => addToBag(product)}>
             <AiOutlineShopping size={30} />
+            <ButtonText>COMPRAR</ButtonText>
           </AddBagButton>
-          <ProductDescription>{product.description}</ProductDescription>
         </ProductCard>
       ))}
     </Container>

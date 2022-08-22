@@ -46,7 +46,7 @@ const BagPage: React.FC<Props> = ({
           <AiOutlineClose
             size={30}
             className='close'
-            color='#210124'
+            color='#FFF'
             onClick={closeBag}
           />
         </ButtonCloseBagBar>

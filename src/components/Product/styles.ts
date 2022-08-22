@@ -13,13 +13,12 @@ export const Container = styled.div`
 export const ProductCard = styled.div`
     display: flex;
     flex-direction: column;
-
     
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 
-    width: 250px;
-    height: 330px;
+    width: 220px;
+    height: 300px;
 
     border-radius: 8px;
 
@@ -81,18 +80,34 @@ export const ProductDescription = styled.p`
 
 export const AddBagButton = styled.button`
     display: flex;
-
+    
     align-items: center;
     justify-content: center; 
 
-    width: 40px;
-    height: 40px;
+    width: 100%;
+    height: 32px;
 
-    border: none;
-    border-radius: 50%;
+    font-size: 16px;
     
+    text-transform: uppercase;
     color: #FFF;
+
     background-color: ${props => props.theme.colors.buttonBackground};
     
+    border: none;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+
     cursor: pointer;
 `;
+
+export const ButtonText = styled.p`
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    
+    color: #FFF;
+    
+    margin: 1px 0 0 14px;
+`;
+
