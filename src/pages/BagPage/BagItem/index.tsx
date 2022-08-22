@@ -47,15 +47,10 @@ const BagItem: React.FC<Props> = ({ item, removeItemFromBag }) => {
         <BagItemName>{item.name}</BagItemName>
         <BagItemAmount>
           <MinusButton
-            onClick={() => {
-              setAmount((oldAmount) => oldAmount - 1);
-            }}
           >-</MinusButton>
           <ItemAmount>{amount}</ItemAmount>
           <PlusButton
-            onClick={() => {
-              setAmount((oldAmount) => oldAmount + 1);
-            }}
+
           >+</PlusButton>
         </BagItemAmount>
         <BagItemPrice>{formatPrice(priceTotal([item]))}</BagItemPrice>
