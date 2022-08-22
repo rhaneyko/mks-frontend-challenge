@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 import {
   Container,
@@ -11,10 +11,10 @@ import {
   ItemAmount,
   BagItemPrice,
   CloseBag,
-} from "./styles";
+} from './styles';
 
-import { AiOutlineClose } from "react-icons/ai";
-import { ItemAtBag } from "../../../App";
+import { AiOutlineClose } from 'react-icons/ai';
+import { ItemAtBag } from '../../../App';
 
 type Props = {
   item: ItemAtBag;
@@ -22,13 +22,13 @@ type Props = {
 };
 
 const BagItem: React.FC<Props> = ({ item, removeItemFromBag }) => {
-  const [itemAmount, setItemAmount] = useState(1);
+  const [amount, setAmount] = useState(1);
   const [total, setTotal] = useState(0);
 
   const formatPrice = (price: number) => {
-    return new Intl.NumberFormat("pt-BR", {
-      style: "currency",
-      currency: "BRL",
+    return new Intl.NumberFormat('pt-BR', {
+      style: 'currency',
+      currency: 'BRL',
     }).format(price);
   };
 
@@ -40,6 +40,14 @@ const BagItem: React.FC<Props> = ({ item, removeItemFromBag }) => {
     } ,0);
   };
 
+  const priceTotal = (cartItems: ItemAtBag[]) => {
+    return cartItems.reduce((acc, item) => {
+      return item.price * item.amount + acc;
+    }, 0);
+  };
+
+  
+
   return (
     <Container>
       <Item>
@@ -48,25 +56,19 @@ const BagItem: React.FC<Props> = ({ item, removeItemFromBag }) => {
         <BagItemAmount>
           <MinusButton
             onClick={() => {
-              setItemAmount((oldAmound) => oldAmound - 1);
-              setTotal(total - item.price);
+              setAmount((oldAmount) => oldAmount - 1);
             }}
-          >
-            -
-          </MinusButton>
-          <ItemAmount>{itemAmount}</ItemAmount>
+          >-</MinusButton>
+          <ItemAmount>{amount}</ItemAmount>
           <PlusButton
             onClick={() => {
-              setItemAmount((oldAmound) => oldAmound + 1);
-              setTotal(total + item.price);
+              setAmount((oldAmount) => oldAmount + 1);
             }}
-          >
-            +
-          </PlusButton>
+          >+</PlusButton>
         </BagItemAmount>
-        <BagItemPrice>R$</BagItemPrice>
+        <BagItemPrice>{formatPrice(priceTotal([item]))}</BagItemPrice>
         <CloseBag onClick={() => removeItemFromBag(item.id)}>
-          <AiOutlineClose size={20} color="#FFF" />
+          <AiOutlineClose size={20} color='#FFF' />
         </CloseBag>
       </Item>
     </Container>
