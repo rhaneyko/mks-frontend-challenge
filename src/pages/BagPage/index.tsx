@@ -20,11 +20,9 @@ type Props = {
   closeBag: () => void;
 };
 
-const BagPage: React.FC<Props> = ({
-  bagItems,
-  removeItemFromBag,
-  closeBag,
-}) => {
+const BagPage: React.FC<Props> = ({bagItems, removeItemFromBag, closeBag,}) => {
+  const [amount, setAmount] = useState(1);
+  
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat('pt-BR', {
       style: 'currency',
@@ -38,7 +36,6 @@ const BagPage: React.FC<Props> = ({
     }, 0);
   };
 
-  const [amount, setAmount] = useState(1);
 
   return (
     <Container>

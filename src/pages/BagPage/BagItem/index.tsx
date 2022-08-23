@@ -23,7 +23,6 @@ type Props = {
 
 const BagItem: React.FC<Props> = ({ item, removeItemFromBag }) => {
   const [amount, setAmount] = useState(1);
-  const [total, setTotal] = useState(0);
 
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat('pt-BR', {
@@ -34,7 +33,7 @@ const BagItem: React.FC<Props> = ({ item, removeItemFromBag }) => {
 
   const priceTotal = (cartItems: ItemAtBag[]) => {
     return cartItems.reduce((acc, item) => {
-      return item.price * amount 
+      return item.price * amount + acc;
     }, 0);
   };
 
@@ -45,7 +44,10 @@ const BagItem: React.FC<Props> = ({ item, removeItemFromBag }) => {
         <BagItemName>{item.name}</BagItemName>
         <BagItemAmount>
           <MinusButton
-              onClick={() => setAmount(amount - 1)}
+          onClick={() => setAmount(amount - 1)
+          }
+          
+              
           >-</MinusButton>
           <ItemAmount>{amount}</ItemAmount>
           <PlusButton
