@@ -15,13 +15,13 @@ import { AiOutlineClose } from 'react-icons/ai';
 import { ItemAtBag } from '../../App';
 
 type Props = {
-  item: ItemAtBag[];
+  bagItems: ItemAtBag[];
   removeItemFromBag: (id: number) => void;
   closeBag: () => void;
 };
 
 const BagPage: React.FC<Props> = ({
-  item,
+  bagItems,
   removeItemFromBag,
   closeBag,
 }) => {
@@ -32,11 +32,13 @@ const BagPage: React.FC<Props> = ({
     }).format(price);
   };
 
-  const priceTotal = (cartItems: ItemAtBag[]) => {
-    return cartItems.reduce((acc, item) => {
-      return acc + item.price * item.amount;
+  const priceTotal = (bagItems: ItemAtBag[]) => {
+    return bagItems.reduce((acc, item) => {
+      return acc + item.price * amount;
     }, 0);
   };
+
+  const [amount, setAmount] = useState(1);
 
   return (
     <Container>
@@ -52,8 +54,8 @@ const BagPage: React.FC<Props> = ({
         </ButtonCloseBagBar>
       </HeaderBagBar>
       <ItemsBag>
-        {BagItem.length === 0 ? <p>Nenhum item na sacola</p> : null}
-        {BagItem.map((item) => (
+        {bagItems.length === 0 ? <p>Nenhum item na sacola</p> : null}
+        {bagItems.map((item) => (
           <BagItem
             key={item.id}
             item={item}
@@ -63,7 +65,7 @@ const BagPage: React.FC<Props> = ({
       </ItemsBag>
       <TotalAmount>
         <p>Total:</p>
-        <p>{formatPrice(priceTotal([item]))}</p>
+        <p>{formatPrice(priceTotal(bagItems))}</p>
       </TotalAmount>
       <FinalizePurchase>
         <p>Finalizar compra</p>

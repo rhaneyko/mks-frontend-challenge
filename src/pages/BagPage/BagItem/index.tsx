@@ -34,7 +34,7 @@ const BagItem: React.FC<Props> = ({ item, removeItemFromBag }) => {
 
   const priceTotal = (cartItems: ItemAtBag[]) => {
     return cartItems.reduce((acc, item) => {
-      return item.price * amount + acc;
+      return item.price * amount 
     }, 0);
   };
 
