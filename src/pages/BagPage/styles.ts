@@ -111,3 +111,5 @@ export const FinalizePurchase = styled.button`
         color: #FFF;
     }
 `;
+
+
