@@ -44,10 +44,7 @@ const BagItem: React.FC<Props> = ({ item, removeItemFromBag }) => {
         <BagItemName>{item.name}</BagItemName>
         <BagItemAmount>
           <MinusButton
-          onClick={() => setAmount(amount - 1)
-          }
-          
-              
+          onClick={() => setAmount(amount - 1)}
           >-</MinusButton>
           <ItemAmount>{amount}</ItemAmount>
           <PlusButton

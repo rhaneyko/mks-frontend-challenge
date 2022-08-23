@@ -70,5 +70,4 @@ const BagPage: React.FC<Props> = ({bagItems, removeItemFromBag, closeBag,}) => {
   );
 };
 
-
 export default BagPage;
