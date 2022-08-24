@@ -39,7 +39,7 @@ const BagPage: React.FC<Props> = ({bagItems, removeItemFromBag, closeBag,}) => {
   return (
     <Container>
       <HeaderBagBar>
-        <BagBarTitle>Sacola de compras</BagBarTitle>
+        <BagBarTitle>Carrinho de compras</BagBarTitle>
         <ButtonCloseBagBar>
           <AiOutlineClose
             size={30}
