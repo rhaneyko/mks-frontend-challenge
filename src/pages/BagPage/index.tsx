@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import BagItem from './BagItem';
 
 import {
@@ -21,6 +21,7 @@ type Props = {
 };
 
 const BagPage: React.FC<Props> = ({bagItems, removeItemFromBag, closeBag,}) => {
+  const [amount, setAmount] = useState(1);
 
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat('pt-BR', {
@@ -31,10 +32,9 @@ const BagPage: React.FC<Props> = ({bagItems, removeItemFromBag, closeBag,}) => {
 
   const priceTotal = (bagItems: ItemAtBag[]) => {
     return bagItems.reduce((acc, item) => {
-      return acc + item.price * item.amount;
+      return acc + item.price * amount;
     }, 0);
   };
-
 
   return (
     <Container>
