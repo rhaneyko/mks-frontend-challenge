@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import {
   Container,
-  Item,
+  ItemCart,
   BagItemImage,
   BagItemName,
   BagItemAmount,
@@ -39,7 +39,7 @@ const BagItem: React.FC<Props> = ({ item, removeItemFromBag }) => {
 
   return (
     <Container>
-      <Item>
+      <ItemCart>
         <BagItemImage src={item.photo} alt={item.name} />
         <BagItemName>{item.name}</BagItemName>
         <BagItemAmount>
@@ -56,7 +56,7 @@ const BagItem: React.FC<Props> = ({ item, removeItemFromBag }) => {
         <CloseBag onClick={() => removeItemFromBag(item.id)}>
           <AiOutlineClose size={20} color='#FFF' />
         </CloseBag>
-      </Item>
+      </ItemCart>
     </Container>
   );
 };
