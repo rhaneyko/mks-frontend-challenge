@@ -38,7 +38,7 @@ const Navbar: React.FC<Props> = ({ bagItems, removeItemFromBag }) => {
   return (
     <Container className='header'>
       <LogoLarge>
-        MKS <LogoSmall>Sistemas</LogoSmall>
+        Tooth <LogoSmall>Produtos</LogoSmall>
       </LogoLarge>
       <BagContainer onClick={navToggle}>
         <AiOutlineShopping size={25} />
